@@ -1,0 +1,52 @@
+{
+  "name": "elodin",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@shoutem/theme": "^0.9.0",
+    "art": "^0.10.1",
+    "d3": "^4.6.0",
+    "d3-array": "^1.0.2",
+    "d3-scale": "^1.0.4",
+    "d3-shape": "^1.0.4",
+    "q": "^1.4.1",
+    "moment": "^2.17.1",
+    "ramda": "^0.22.1",
+    "react": "~15.4.1",
+    "react-native": "0.42.3",
+    "react-navigation": "^1.0.0-beta.7",
+    "react-native-actionsheet": "^2.0.5",
+    "react-native-image-progress": "^0.6.0",
+    "react-native-keyboard-aware-scroll-view": "^0.2.7",
+    "react-native-menu": "^0.20.2",
+    "react-native-navigation-redux-helpers": "^0.5.0",
+    "react-native-progress": "^3.2.0",
+    "react-native-scrollable-tab-view": "^0.7.2",
+    "react-native-sortable-listview": "^0.1.1",
+    "react-native-swipeout": "git+https://github.com/magrinj/react-native-swipeout",
+    "react-native-vector-icons": "^4.0.0",
+    "react-redux": "^5.0.1",
+    "redux": "^3.6.0",
+    "redux-saga": "^0.13.0",
+    "redux-thunk": "^2.2.0"
+  },
+  "devDependencies": {
+    "babel-jest": "19.0.0",
+    "babel-preset-react-native": "1.9.1",
+    "jest": "19.0.2",
+    "react-test-renderer": "~15.4.1",
+    "remote-redux-devtools": "^0.5.7",
+    "eslint": "^3.15.0",
+    "eslint-config-airbnb": "latest",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.9.0"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}

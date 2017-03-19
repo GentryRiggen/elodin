@@ -1,0 +1,28 @@
+export const domain = 'com.dope-components';
+export default {
+  domain,
+  components: {
+    AnimatedView: `${domain}.AnimatedView`,
+    Avatar: `${domain}.Avatar`,
+    BarChart: `${domain}.BarChart`,
+    Button: `${domain}.Button`,
+    Checkbox: `${domain}.Checkbox`,
+    Icon: `${domain}.Icon`,
+    LineChart: `${domain}.LineChart`,
+    List: `${domain}.List`,
+    ListItem: `${domain}.ListItem`,
+    ListSwipeButton: `${domain}.ListSwipeButton`,
+    NavBar: `${domain}.NavBar`,
+    Page: `${domain}.Page`,
+    PieChart: `${domain}.PieChart`,
+    RadioButton: `${domain}.RadioButton`,
+    Spinner: `${domain}.Spinner`,
+    Tab: `${domain}.Tab`,
+    TabBar: `${domain}.TabBar`,
+    Text: `${domain}.Text`,
+    TextInput: `${domain}.TextInput`,
+    TopTabs: `${domain}.TopTabs`,
+    TouchableHighlight: `${domain}.TouchableHighlight`,
+    View: `${domain}.View`,
+  },
+};
