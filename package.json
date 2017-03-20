@@ -1,6 +1,6 @@
 {
   "name": "elodin",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
@@ -23,7 +23,6 @@
     "react-native-image-progress": "^0.6.0",
     "react-native-keyboard-aware-scroll-view": "^0.2.7",
     "react-native-menu": "^0.20.2",
-    "react-native-navigation-redux-helpers": "^0.5.0",
     "react-native-progress": "^3.2.0",
     "react-native-scrollable-tab-view": "^0.7.2",
     "react-native-sortable-listview": "^0.1.1",
