@@ -25,7 +25,7 @@
     "react-native-progress": "^3.2.0",
     "react-native-scrollable-tab-view": "^0.7.2",
     "react-native-sortable-listview": "^0.2.2",
-    "react-native-swipeout": "^2.0.12",
+    "react-native-swipeout": "git+https://github.com/magrinj/react-native-swipeout",
     "react-native-vector-icons": "^4.0.0",
     "react-navigation": "^1.0.0-beta.7",
     "react-redux": "^5.0.1",
