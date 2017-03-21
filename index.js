@@ -24,7 +24,7 @@ import TextInput from './components/TextInput';
 import theme, { getTheme } from './components/lib/theme';
 import TopTabs from './components/TopTabs';
 
-export {
+module.exports = {
   AnimatedView,
   Avatar,
   BarChart,
