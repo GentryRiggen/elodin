@@ -13,6 +13,7 @@ class TextInput extends React.Component {
     onChangeText: React.PropTypes.func.isRequired,
     disabled: React.PropTypes.bool,
     multiline: React.PropTypes.bool,
+    secureTextEntry: React.PropTypes.bool,
     style: React.PropTypes.any.isRequired,
   };
 
@@ -20,6 +21,7 @@ class TextInput extends React.Component {
     placeholder: '',
     disabled: false,
     multiline: false,
+    secureTextEntry: false,
   };
 
   constructor(props) {
@@ -47,6 +49,7 @@ class TextInput extends React.Component {
       multiline,
       onChangeText,
       placeholder,
+      secureTextEntry,
       style,
       value,
     } = this.props;
@@ -62,6 +65,7 @@ class TextInput extends React.Component {
       >
         <NativeTextInput
           ref={component => this.component = component}
+          {...this.props}
           style={{
             ...style.input,
             height: height - 4,
@@ -74,6 +78,7 @@ class TextInput extends React.Component {
           onFocus={this.onFocus()}
           onBlur={this.onBlur()}
           onChangeText={onChangeText}
+          securetTextEntry={secureTextEntry}
         />
 
         <View style={borderStyle} />
