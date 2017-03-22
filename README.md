@@ -17,7 +17,7 @@ cd elodinApp
 
 Include Elodin components in your React Native project.
 ```
-yarn add git+https://github.com/GentryRiggen/elodin
+yarn add elodin-components
 ```
 
 TODO
