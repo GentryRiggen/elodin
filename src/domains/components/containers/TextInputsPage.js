@@ -1,6 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 import {
+  Gap,
   Page,
   StyleSheet,
   TextInput,
@@ -10,7 +11,7 @@ import {
 class TextInputsPage extends React.Component {
   static navigationOptions = {
     header: {
-      title: <Text styleName="title">Text Inputs</Text>,
+      title: <Text styleName="title" >Text Inputs</Text>,
     },
   };
 
@@ -29,30 +30,34 @@ class TextInputsPage extends React.Component {
 
   renderTextInput(value, placeholder, multiline) {
     return (
-      <TextInput
-        value={this.state[value]}
-        onChangeText={text => this.setState({ [value]: text })}
-        placeholder={placeholder}
-        multiline={multiline}
-      />
+      <View>
+        <TextInput
+          value={this.state[value]}
+          onChangeText={text => this.setState({ [value]: text })}
+          placeholder={placeholder}
+          minLength={5}
+          minLengthError={`${placeholder} must be at least 5 characters`}
+          multiline={multiline}
+          required
+          requiredError={`${placeholder} is required`}
+          validateOn="submit"
+        />
+        <Gap top={8} />
+      </View>
     );
   }
 
   render() {
     return (
-      <Page scrollable>
-        <View style={styles.container}>
-          <View>
-            {this.renderTextInput('text1', 'Text Input', false)}
-            {this.renderTextInput('text2', 'Text Area', true)}
-            {this.renderTextInput('text3', 'Text Area', true)}
-          </View>
-
-          <View style={styles.bottom}>
-            {this.renderTextInput('text4', 'Text Area Keyboard moves page', true)}
-            {this.renderTextInput('text5', 'Text Area Keyboard moves page', true)}
-            {this.renderTextInput('text6', 'Text Area Keyboard moves page', true)}
-          </View>
+      <Page scrollable >
+        <View style={styles.container} >
+          {this.renderTextInput('text1', 'Text Input', false)}
+          {this.renderTextInput('text2', 'Text Area', true)}
+          <Gap top={100} />
+          <Text styleName="bold subheading">
+            The view adjusts to move out of the way of the keyboard
+          </Text>
+          {this.renderTextInput('text4', 'Text Area', true)}
         </View>
       </Page>
     );

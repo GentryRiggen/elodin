@@ -4,6 +4,7 @@ import BarChart from './BarChart';
 import Button from './Button';
 import Checkbox from './Checkbox';
 import * as Constants from './lib/constants';
+import Gap from './Gap';
 import Icon from './Icon';
 import LineChart from './LineChart';
 import List from './List';
@@ -33,6 +34,7 @@ export {
   Checkbox,
   Constants,
   getTheme,
+  Gap,
   Icon,
   LineChart,
   List,

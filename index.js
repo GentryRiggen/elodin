@@ -5,6 +5,7 @@ import Button from './components/Button';
 import Checkbox from './components/Checkbox';
 import * as Constants from './components/lib/constants';
 import Icon from './components/Icon';
+import Gap from './components/Gap';
 import LineChart from './components/LineChart';
 import List from './components/List';
 import ListItem from './components/ListItem';
@@ -32,6 +33,7 @@ module.exports = {
   Checkbox,
   Constants,
   getTheme,
+  Gap,
   Icon,
   LineChart,
   List,
