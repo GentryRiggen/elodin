@@ -119,6 +119,10 @@ class TextInput extends Component {
     };
   }
 
+  checkIsValid() {
+    return this.isValid(this.state.value);
+  }
+
   isValid(value) {
     const validationError = R.find(this.validate(value))(this.validators);
     if (validationError) {
