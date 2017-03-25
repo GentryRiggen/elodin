@@ -1,19 +1,19 @@
 const getStyle = (colors, font) => ({
   '.regular': {
-    fontFamily: font.fontFamilyRegular,
+    fontWeight: font.fontWeightRegular,
     color: colors.darkTextColor,
     '.inverse': {
       color: colors.lightTextColor,
     },
   },
   '.bold': {
-    fontFamily: font.fontFamilyBold,
+    fontWeight: font.fontWeightBold,
     '.inverse': {
       color: colors.lightTextColor,
     },
   },
   '.light': {
-    fontFamily: font.fontFamilyLight,
+    fontWeight: font.fontWeightLight,
     '.inverse': {
       color: colors.lightTextColor,
     },
@@ -66,8 +66,9 @@ const getStyle = (colors, font) => ({
   },
 
   fontFamily: font.fontFamilyRegular,
-  color: colors.darkTextColor,
+  fontWeight: font.fontWeightRegular,
   fontSize: font.fontSizeBody,
+  color: colors.darkTextColor,
   lineHeight: font.fontHeightBody,
   textAlign: 'auto',
   backgroundColor: 'transparent',

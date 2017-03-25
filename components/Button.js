@@ -1,12 +1,7 @@
 import React from 'react';
-import {
-  Animated,
-  Easing,
-  TouchableWithoutFeedback,
-} from 'react-native';
+import { TouchableOpacity } from 'react-native';
 import { connectStyle } from '@shoutem/theme';
 import Constants from './lib/constants';
-import AnimatedView from './AnimatedView';
 import View from './View';
 import Text from './Text';
 
@@ -22,74 +17,8 @@ class Button extends React.Component {
   static defaultProps = {
     disabled: false,
     text: '',
-    noripple: false,
+    noRipple: false,
   };
-
-  constructor(props, context) {
-    super(props, context);
-
-    const maxOpacity = 0.12;
-
-    this.state = {
-      maxOpacity,
-      scaleValue: new Animated.Value(0.01),
-      opacityValue: new Animated.Value(maxOpacity),
-      width: 48,
-    };
-  }
-
-  onPressedIn() {
-    return () => {
-      Animated.timing(this.state.scaleValue, {
-        toValue: 10,
-        duration: 5000,
-        easing: Easing.bezier(0.0, 0.0, 0.2, 1),
-      }).start();
-    };
-  }
-
-  onPressedOut() {
-    return () => {
-      Animated.timing(this.state.opacityValue, {
-        toValue: 0,
-      }).start(() => {
-        this.state.scaleValue.setValue(0.01);
-        this.state.opacityValue.setValue(this.state.maxOpacity);
-      });
-    };
-  }
-
-  renderRippleView() {
-    if (this.props.disabled || this.props.noRipple) {
-      return null;
-    }
-
-    const {
-      scaleValue,
-      opacityValue,
-      width,
-    } = this.state;
-    return (
-      <AnimatedView
-        style={{
-          transform: [{ scale: scaleValue }],
-          opacity: opacityValue,
-          width,
-          height: width,
-          borderRadius: width / 2,
-          top: -1 * (width / 3.5),
-          left: (width / 12),
-        }}
-      />
-    );
-  }
-
-  onLayout() {
-    return (e) => {
-      const { width } = e.nativeEvent.layout;
-      this.setState({ width });
-    };
-  }
 
   setNativeProps(nativeProps) {
     this.component.setNativeProps(nativeProps);
@@ -106,30 +35,30 @@ class Button extends React.Component {
     const buttonOnPress = disabled ? (() => null) : onPress;
     const content = text
       ? (
-        <Text style={style.text}>
+        <Text>
           {text.toUpperCase()}
         </Text>
       )
       : children;
 
+    console.log(style);
+    const finalStyle = {
+      ...style,
+    };
+    delete finalStyle.underlayColor;
+    console.log(finalStyle);
+
     return (
-      <TouchableWithoutFeedback
-        onPressIn={this.onPressedIn()}
-        onPressOut={this.onPressedOut()}
+      <TouchableOpacity
         onPress={buttonOnPress}
-        underlayColor="transparent"
-        styleName="dark"
-        style={style}
+        underlayColor={style.underlayColor}
         ref={component => this.component = component}
-        onLayout={this.onLayout()}
+        style={finalStyle}
       >
-        <View
-          style={style.container}
-        >
-          {this.renderRippleView()}
+        <View>
           {content}
         </View>
-      </TouchableWithoutFeedback>
+      </TouchableOpacity>
     );
   }
 }

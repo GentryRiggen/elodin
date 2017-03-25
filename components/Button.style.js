@@ -2,89 +2,66 @@ import Constants from './lib/constants';
 
 const getStyle = (colors, font, dimensions) => ({
   '.flat': {
-    container: {
-      backgroundColor: 'transparent',
-    },
+    underlayColor: 'transparent',
     '.accent': {
-      container: {
-        [`${Constants.domain}.AnimatedView`]: {
-          backgroundColor: colors.accentColor,
-        },
-        [`${Constants.domain}.Text`]: {
-          color: colors.accentColor,
-        },
+      underlayColor: colors.accentColor,
+      [`${Constants.domain}.Text`]: {
+        color: colors.accentColor,
       },
     },
     '.secondary': {
-      container: {
-        [`${Constants.domain}.AnimatedView`]: {
-          backgroundColor: colors.secondaryDarkTextColor,
-        },
-        [`${Constants.domain}.Text`]: {
-          color: colors.secondaryDarkTextColor,
-        },
+      underlayColor: colors.secondaryDarkTextColor,
+      [`${Constants.domain}.Text`]: {
+        color: colors.secondaryDarkTextColor,
       },
     },
     '.inverse-secondary': {
-      container: {
-        [`${Constants.domain}.AnimatedView`]: {
-          backgroundColor: colors.secondaryLightTextColor,
-        },
-        [`${Constants.domain}.Text`]: {
-          color: colors.secondaryLightTextColor,
-        },
+      underlayColor: colors.secondaryLightTextColor,
+      [`${Constants.domain}.Text`]: {
+        color: colors.secondaryLightTextColor,
       },
     },
     '.disabled': {
-      container: {
-        [`${Constants.domain}.Text`]: {
-          color: colors.disabledDarkTextColor,
-        },
+      [`${Constants.domain}.Text`]: {
+        color: colors.disabledDarkTextColor,
       },
     },
     '.inverse-disabled': {
-      container: {
-        [`${Constants.domain}.Text`]: {
-          color: colors.disabledLightTextColor,
-        },
+      [`${Constants.domain}.Text`]: {
+        color: colors.disabledLightTextColor,
       },
     },
   },
 
   '.raised': {
-    container: {
+    underlayColor: colors.white.full,
+    [Constants.components.View]: {
       backgroundColor: colors.primaryColor,
-      [`${Constants.domain}.AnimatedView`]: {
-        backgroundColor: colors.white.full,
-      },
       [`${Constants.domain}.Text`]: {
         color: colors.white.full,
       },
     },
     '.accent': {
-      container: {
+      underlayColor: colors.white.full,
+      [Constants.components.View]: {
         backgroundColor: colors.accentColor,
-        [`${Constants.domain}.AnimatedView`]: {
-          backgroundColor: colors.white.full,
-        },
         [`${Constants.domain}.Text`]: {
           color: colors.white.full,
         },
       },
     },
     '.secondary': {
-      container: {
+      underlayColor: colors.white.full,
+      [Constants.components.View]: {
         backgroundColor: colors.grey[200],
-        [`${Constants.domain}.AnimatedView`]: {
-          backgroundColor: colors.secondaryDarkTextColor,
-        },
         [`${Constants.domain}.Text`]: {
           color: colors.secondaryDarkTextColor,
         },
       },
     },
     '.disabled': {
-      container: {
+      underlayColor: colors.white.full,
+      [Constants.components.View]: {
         backgroundColor: colors.grey[500],
         [`${Constants.domain}.Text`]: {
           color: colors.disabledLightTextColor,
@@ -94,24 +71,26 @@ const getStyle = (colors, font, dimensions) => ({
   },
 
   '.narrow': {
-    container: {
+    [Constants.components.View]: {
       paddingLeft: 4,
       paddingRight: 4,
     },
   },
   '.flex-start': {
-    container: {
+    [Constants.components.View]: {
       paddingLeft: 12,
       justifyContent: 'flex-start',
     },
   },
   '.flex-end': {
-    container: {
+    [Constants.components.View]: {
       paddingRight: 12,
       justifyContent: 'flex-end',
     },
   },
-  container: {
+
+  underlayColor: colors.primaryColor,
+  [Constants.components.View]: {
     height: 36,
     minWidth: 64,
     paddingLeft: 16,
@@ -121,18 +100,9 @@ const getStyle = (colors, font, dimensions) => ({
     alignItems: 'center',
     justifyContent: 'center',
     overflow: 'hidden',
-    backgroundColor: 'transparent',
-    [`${Constants.domain}.AnimatedView`]: {
-      backgroundColor: colors.primaryColor,
-      position: 'absolute',
-      top: 0,
-      left: 24,
-      width: 64,
-      height: 48,
-      borderRadius: 32,
-    },
     [`${Constants.domain}.Text`]: {
       fontFamily: font.fontFamilyBold,
+      fontWeight: font.fontWeightBold,
       color: colors.primaryColor,
     },
   },

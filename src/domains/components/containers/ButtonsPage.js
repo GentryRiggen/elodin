@@ -14,6 +14,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     padding: 8,
   },
+  bigButton: {
+    margin: 4,
+  },
   button: {
     flex: 1,
     justifyContent: 'center',
@@ -34,6 +37,21 @@ class ButtonsPage extends React.Component {
 
     return (
       <View>
+        <View style={styles.bigButton}>
+          <Button
+            styleName={`flat primary ${inverseStyleName}`}
+            text="Primary"
+            onPress={noOp}
+          />
+        </View>
+        <View style={styles.bigButton}>
+          <Button
+            styleName={`raised primary ${inverseStyleName}`}
+            text="Primary"
+            onPress={noOp}
+          />
+        </View>
+
         <View style={styles.buttonGroup}>
           <View style={styles.button}>
             <Button
@@ -109,7 +127,7 @@ class ButtonsPage extends React.Component {
 
   render() {
     return (
-      <Page>
+      <Page scrollable>
         <View
           style={{
             flex: 1,

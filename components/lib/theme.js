@@ -372,10 +372,10 @@ const colors = {
   },
 
   get primaryColor() {
-    return '#FF5252';
+    return this.blue[500];
   },
   get accentColor() {
-    return this.blue[500];
+    return this.pink[500];
   },
   get successColor() {
     return this.green[500];
@@ -427,9 +427,12 @@ const dimensions = {
 };
 
 const font = {
-  fontFamilyBold: 'Lato-Bold',
-  fontFamilyRegular: 'Lato-Regular',
-  fontFamilyLight: 'Lato-Light',
+  fontFamilyBold: 'System',
+  fontWeightBold: '600',
+  fontFamilyRegular: 'System',
+  fontWeightRegular: '300',
+  fontFamilyLight: 'System',
+  fontWeightLight: '200',
 
   fontSizeTitle: 20,
   fontHeightTitle: 28,
