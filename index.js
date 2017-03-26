@@ -5,6 +5,7 @@ import Button from './components/Button';
 import Checkbox from './components/Checkbox';
 import * as Constants from './components/lib/constants';
 import Icon from './components/Icon';
+import { focusTextInput } from './components/utils';
 import Gap from './components/Gap';
 import LineChart from './components/LineChart';
 import List from './components/List';
@@ -32,6 +33,7 @@ module.exports = {
   Button,
   Checkbox,
   Constants,
+  focusTextInput,
   getTheme,
   Gap,
   Icon,

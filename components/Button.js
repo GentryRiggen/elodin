@@ -41,12 +41,10 @@ class Button extends React.Component {
       )
       : children;
 
-    console.log(style);
     const finalStyle = {
       ...style,
     };
     delete finalStyle.underlayColor;
-    console.log(finalStyle);
 
     return (
       <TouchableOpacity

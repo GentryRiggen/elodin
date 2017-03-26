@@ -1,6 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 import {
+  focusTextInput,
   Gap,
   Page,
   StyleSheet,
@@ -23,15 +24,27 @@ class TextInputsPage extends React.Component {
       text2: '',
       text3: '',
       text4: '',
-      text5: '',
-      text6: '',
     };
   }
 
-  renderTextInput(value, placeholder, multiline) {
+  setRef(key) {
+    return (element) => {
+      this[key] = element;
+    };
+  }
+
+  focusInput(key) {
+    return () => {
+      if (!key) return;
+      focusTextInput(this[key]);
+    };
+  }
+
+  renderTextInput(value, placeholder, multiline, refName, nextInput = false) {
     return (
       <View>
         <TextInput
+          ref={this.setRef(refName)}
           value={this.state[value]}
           onChangeText={text => this.setState({ [value]: text })}
           placeholder={placeholder}
@@ -40,7 +53,10 @@ class TextInputsPage extends React.Component {
           multiline={multiline}
           required
           requiredError={`${placeholder} is required`}
+          returnKeyType="next"
           validateOn="submit"
+          onSubmitEditing={this.focusInput(nextInput)}
+          blurOnSubmit={false}
         />
         <Gap top={8} />
       </View>
@@ -51,13 +67,14 @@ class TextInputsPage extends React.Component {
     return (
       <Page scrollable >
         <View style={styles.container} >
-          {this.renderTextInput('text1', 'Text Input', false)}
-          {this.renderTextInput('text2', 'Text Area', true)}
+          {this.renderTextInput('text1', 'Text Input', false, 't1', 't2')}
+          {this.renderTextInput('text2', 'Text Input', false, 't2', 't3')}
+          {this.renderTextInput('text3', 'Text Area', true, 't3', 't4')}
           <Gap top={100} />
-          <Text styleName="bold subheading">
+          <Text styleName="bold subheading" >
             The view adjusts to move out of the way of the keyboard
           </Text>
-          {this.renderTextInput('text4', 'Text Area', true)}
+          {this.renderTextInput('text4', 'Text Area', true, 't4')}
         </View>
       </Page>
     );

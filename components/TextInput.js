@@ -26,17 +26,17 @@ class TextInput extends Component {
     requiredError: PropTypes.string,
     secureTextEntry: PropTypes.bool,
     style: PropTypes.any.isRequired,
-    validateOn: PropTypes.oneOf(['change', 'submit']),
+    validateOn: PropTypes.oneOf(['blur', 'change', 'submit']),
   };
 
   static defaultProps = {
     placeholder: '',
     disabled: false,
     minLength: 0,
-    minLengthError: 'Not long enough',
+    minLengthError: 'Too short',
     multiline: false,
     required: false,
-    requiredError: 'required',
+    requiredError: 'Field is required',
     secureTextEntry: false,
     validateOn: 'submit',
     onSubmitEditing: () => null,
@@ -81,14 +81,13 @@ class TextInput extends Component {
 
   onBlur(isSubmit = false) {
     return (event) => {
+      const { validateOn } = this.props;
       this.setState({ focused: false });
       const value = R.pathOr(false, ['nativeEvent', 'text'], event);
       if (value === false) return;
-      const isValid = this.props.validateOn === 'submit'
-        ? this.isValid(value)
-        : true;
 
-      if (isValid) {
+      if (validateOn === 'blur' || validateOn === 'submit') {
+        this.getError(value);
         const handler = isSubmit
           ? this.props.onSubmitEditing
           : this.props.onBlur;
@@ -104,18 +103,18 @@ class TextInput extends Component {
         value,
       });
       if (this.props.validateOn === 'change' || this.state.hasError) {
-        this.isValid(value);
+        this.getError(value);
       }
 
       this.props.onChangeText(value);
     };
   }
 
-  checkIsValid() {
-    return this.isValid(this.state.value);
+  errors() {
+    return this.getError(this.state.value);
   }
 
-  isValid(value) {
+  getError(value) {
     const validationError = R.find(this.validate(value))(this.validators);
     if (validationError) {
       this.setState({
@@ -131,7 +130,7 @@ class TextInput extends Component {
       });
     }
 
-    return !validationError;
+    return validationError;
   }
 
   validate(value) {

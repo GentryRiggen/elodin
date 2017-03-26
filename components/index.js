@@ -25,6 +25,7 @@ import TextInput from './TextInput';
 import theme, { getTheme } from './lib/theme';
 import TopTabs from './TopTabs';
 import View from './View';
+import { focusTextInput } from './utils';
 
 export {
   AnimatedView,
@@ -33,6 +34,7 @@ export {
   Button,
   Checkbox,
   Constants,
+  focusTextInput,
   getTheme,
   Gap,
   Icon,
