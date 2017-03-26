@@ -79,14 +79,6 @@ class TextInput extends Component {
     return () => this.setState({ focused: true });
   }
 
-  onEndEditing() {
-    return (event) => {
-      if (this.props.validateOn === 'submit') {
-        this.onBlur(true)(event);
-      }
-    };
-  }
-
   onBlur(isSubmit = false) {
     return (event) => {
       this.setState({ focused: false });
@@ -149,10 +141,6 @@ class TextInput extends Component {
     }
   }
 
-  setNativeProps(nativeProps) {
-    this.component.setNativeProps(nativeProps);
-  }
-
   renderErrorText() {
     if (this.state.hasError) {
       return <Text styleName="small error" >{this.state.errorText}</Text>
@@ -182,7 +170,6 @@ class TextInput extends Component {
     return (
       <View style={containerStyle} >
         <NativeTextInput
-          ref={component => this.component = component}
           {...this.props}
           style={inputStyle}
           editable={!disabled}
