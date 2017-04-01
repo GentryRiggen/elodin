@@ -1,20 +1,26 @@
 {
   "extends": "airbnb",
+  "plugins": ["react"],
   "parser": "babel-eslint",
-  "ecmaFeatures": {
-    "classes": true,
-    "jsx": true
-  },
-  "plugins": [
-    "react"
-  ],
   "rules": {
-    "react/display-name": 1,
-    "react/forbid-prop-types": 0,
-    "react/jsx-filename-extension": 0,
-    "global-require": 0
+    "class-methods-use-this": "off",
+    "global-require": "off",
+    "import/no-extraneous-dependencies": "off",
+    "import/prefer-default-export": "off",
+    "jsx-a11y/label-has-for": "warn",
+    "new-cap": "off",
+    "react/forbid-prop-types": "off",
+    "react/jsx-filename-extension": "off",
+    "react/no-array-index-key": "warn",
+    "react/no-find-dom-node": "warn",
+    "react/no-string-refs": "warn",
+    "react/no-unused-prop-types": "warn",
+    "react/require-default-props": "warn"
+  },
+  "settings": {
+    "import/resolver": "reactnative"
   },
   "globals": {
-    "require": true
+    "window": true
   }
 }

@@ -15,29 +15,24 @@ const checkMinLength = (minLength) => {
 
 class TextInput extends Component {
   static propTypes = {
-    value: PropTypes.string.isRequired,
-    placeholder: PropTypes.string,
     onChangeText: PropTypes.func.isRequired,
     disabled: PropTypes.bool,
     minLength: PropTypes.number,
     minLengthError: PropTypes.string,
-    multiline: PropTypes.bool,
     required: PropTypes.bool,
     requiredError: PropTypes.string,
-    secureTextEntry: PropTypes.bool,
     style: PropTypes.any.isRequired,
     validateOn: PropTypes.oneOf(['blur', 'change', 'submit']),
+    onSubmitEditing: PropTypes.func,
+    onBlur: () => null,
   };
 
   static defaultProps = {
-    placeholder: '',
     disabled: false,
     minLength: 0,
     minLengthError: 'Too short',
-    multiline: false,
     required: false,
     requiredError: 'Field is required',
-    secureTextEntry: false,
     validateOn: 'submit',
     onSubmitEditing: () => null,
     onChangeText: () => null,
@@ -110,10 +105,6 @@ class TextInput extends Component {
     };
   }
 
-  errors() {
-    return this.getError(this.state.value);
-  }
-
   getError(value) {
     const validationError = R.find(this.validate(value))(this.validators);
     if (validationError) {
@@ -133,56 +124,58 @@ class TextInput extends Component {
     return validationError;
   }
 
+  errors() {
+    return this.getError(this.state.value);
+  }
+
   validate(value) {
-    return checker => {
+    return (checker) => {
       const validatorFunction = R.prop('validator')(checker);
       return validatorFunction(value);
-    }
+    };
   }
 
   renderErrorText() {
     if (this.state.hasError) {
-      return <Text styleName="small error" >{this.state.errorText}</Text>
+      return <Text styleName="small error" >{this.state.errorText}</Text>;
     }
+    return null;
+  }
+
+  renderDivider() {
+    const { style } = this.props;
+    let borderStyle = this.state.focused ? style.focusedBorder : style.border;
+    borderStyle = this.state.hasError
+      ? {
+        ...borderStyle,
+        ...style.errorBorder,
+      }
+      : borderStyle;
+    return (
+      <View style={borderStyle} />
+    );
   }
 
   render() {
     const {
       disabled,
-      multiline,
-      placeholder,
-      secureTextEntry,
       style,
-      value,
     } = this.props;
-    const borderStyle = this.state.focused ? style.focusedBorder : style.border;
-    const height = multiline ? 80 : 36;
-    const containerStyle = {
-      ...style.container,
-      height,
-    };
-    const inputStyle = {
-      ...style.input,
-      height: height - 4,
-    };
 
     return (
-      <View style={containerStyle} >
+      <View style={style.container}>
         <NativeTextInput
           {...this.props}
-          style={inputStyle}
+          style={style.input}
           editable={!disabled}
-          multiline={multiline}
-          placeholder={placeholder}
           placeholderTextColor={style.placeholderTextColor}
-          value={value}
           onFocus={this.onFocus()}
           onSubmitEditing={this.onBlur(true)}
           onChangeText={this.onChangeText()}
           onEndEditing={this.onBlur()}
-          securetTextEntry={secureTextEntry}
+          ref={(input) => { this.input = input; }}
         />
-        <View style={borderStyle} />
+        {this.renderDivider()}
         {this.renderErrorText()}
       </View>
     );

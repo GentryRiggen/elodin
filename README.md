@@ -1,5 +1,6 @@
 # Elodin Components
 Cross-platform UI components for React Native
+[GITHUB](https://github.com/gentryriggen/elodin-components)
 
 # Table of Content
 1. [What are Elodin Components?](#1-what-are-elodin-components)

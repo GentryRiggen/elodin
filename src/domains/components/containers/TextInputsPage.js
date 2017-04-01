@@ -9,10 +9,24 @@ import {
   Text,
 } from '../../../../components';
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'space-between',
+    padding: 16,
+  },
+  bottom: {
+    flexDirection: 'column',
+    flex: 1,
+    justifyContent: 'flex-end',
+  },
+});
+
+
 class TextInputsPage extends React.Component {
   static navigationOptions = {
     header: {
-      title: <Text styleName="title" >Text Inputs</Text>,
+      title: <Text styleName="title">Text Inputs</Text>,
     },
   };
 
@@ -35,7 +49,6 @@ class TextInputsPage extends React.Component {
 
   focusInput(key) {
     return () => {
-      if (!key) return;
       focusTextInput(this[key]);
     };
   }
@@ -56,7 +69,7 @@ class TextInputsPage extends React.Component {
           returnKeyType="next"
           validateOn="submit"
           onSubmitEditing={this.focusInput(nextInput)}
-          blurOnSubmit={false}
+          styleName={`${multiline ? 'multiline' : ''}`}
         />
         <Gap top={8} />
       </View>
@@ -65,13 +78,13 @@ class TextInputsPage extends React.Component {
 
   render() {
     return (
-      <Page scrollable >
-        <View style={styles.container} >
+      <Page scrollable>
+        <View style={styles.container}>
           {this.renderTextInput('text1', 'Text Input', false, 't1', 't2')}
           {this.renderTextInput('text2', 'Text Input', false, 't2', 't3')}
           {this.renderTextInput('text3', 'Text Area', true, 't3', 't4')}
           <Gap top={100} />
-          <Text styleName="bold subheading" >
+          <Text styleName="bold subheading">
             The view adjusts to move out of the way of the keyboard
           </Text>
           {this.renderTextInput('text4', 'Text Area', true, 't4')}
@@ -80,18 +93,5 @@ class TextInputsPage extends React.Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'space-between',
-    padding: 16,
-  },
-  bottom: {
-    flexDirection: 'column',
-    flex: 1,
-    justifyContent: 'flex-end',
-  },
-});
 
 export default TextInputsPage;
