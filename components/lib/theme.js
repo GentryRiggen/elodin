@@ -10,6 +10,7 @@ import listItemStyle from '../ListItem.style';
 import listSwipeButtonStyle from '../ListSwipeButton.style';
 import navBarStyle from '../NavBar.style';
 import pageStyle from '../Page.style';
+import pickerStyle from '../Picker.style';
 import pieChartStyle from '../PieChart.style';
 import radioButtonStyle from '../RadioButton.style';
 import spinnerStyle from '../Spinner.style';
@@ -424,6 +425,8 @@ const dimensions = {
 
   listItemMinHeight: 48,
   listItemLeftMargin: 16,
+
+  pickerLabelLeftMargin: 20,
 };
 
 const font = {
@@ -466,6 +469,7 @@ export const getTheme = (options = theme) => ({
   [Constants.components.ListSwipeButton]: getStyle(listSwipeButtonStyle, options),
   [Constants.components.NavBar]: getStyle(navBarStyle, options),
   [Constants.components.Page]: getStyle(pageStyle, options),
+  [Constants.components.Picker]: getStyle(pickerStyle, options),
   [Constants.components.PieChart]: getStyle(pieChartStyle, options),
   [Constants.components.RadioButton]: getStyle(radioButtonStyle, options),
   [Constants.components.Spinner]: getStyle(spinnerStyle, options),

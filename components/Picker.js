@@ -1,5 +1,8 @@
 import React from 'react';
 import R from 'ramda';
+import { connectStyle } from '@shoutem/theme';
+
+import Constants from './lib/constants';
 import Icon from './Icon';
 import List from './List';
 import ListItem from './ListItem';
@@ -13,6 +16,7 @@ class Picker extends React.Component {
     items: React.PropTypes.object.isRequired,
     selected: React.PropTypes.any.isRequired,
     onItemSelected: React.PropTypes.func.isRequired,
+    style: React.PropTypes.any,
   };
 
   static defaultProps = {
@@ -74,9 +78,10 @@ class Picker extends React.Component {
     const {
       items,
       header,
+      style,
     } = this.props;
     const headerText = header.length > 0
-      ? <Text styleName="subheading" style={{paddingLeft: 16}}>{header}</Text>
+      ? <Text styleName="small" style={style.label}>{header}</Text>
       : null;
     return (
       <View>
@@ -103,4 +108,4 @@ class Picker extends React.Component {
   }
 }
 
-export default Picker;
+export default connectStyle(Constants.components.Picker)(Picker);

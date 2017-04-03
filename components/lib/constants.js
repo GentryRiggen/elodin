@@ -14,6 +14,7 @@ export default {
     ListSwipeButton: `${domain}.ListSwipeButton`,
     NavBar: `${domain}.NavBar`,
     Page: `${domain}.Page`,
+    Picker: `${domain}.Picker`,
     PieChart: `${domain}.PieChart`,
     RadioButton: `${domain}.RadioButton`,
     Spinner: `${domain}.Spinner`,
