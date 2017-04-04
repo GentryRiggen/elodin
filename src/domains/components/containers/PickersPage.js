@@ -1,4 +1,5 @@
 import React from 'react';
+import { View } from 'react-native';
 import {
   Page,
   Picker,
@@ -28,7 +29,7 @@ class PickersPage extends React.Component {
   getItems() {
     const items = {};
     [0, 1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 14, 15, 16]
-      .forEach(id => items[id] = {
+      .forEach((id) => items[id] = {
         headerText: `Item ${id}`,
       });
     return items;
@@ -37,19 +38,23 @@ class PickersPage extends React.Component {
   render() {
     return (
       <Page>
-        <Picker
-          header="Random List of Items"
-          items={this.getItems()}
-          selected={this.state.selected}
-          onItemSelected={this.onItemSelected()}
-        />
+        <View style={{ paddingTop: 24 }}>
+          <Picker
+            header="Random List of Items"
+            items={this.getItems()}
+            selected={this.state.selected}
+            onItemSelected={this.onItemSelected()}
+            showSearch
+          />
 
-        <Picker
-          header="Another Random List of Items"
-          items={this.getItems()}
-          selected={this.state.selected}
-          onItemSelected={this.onItemSelected()}
-        />
+          <Picker
+            header="Another Random List of Items"
+            items={this.getItems()}
+            selected={this.state.selected}
+            onItemSelected={this.onItemSelected()}
+            showSearch
+          />
+        </View>
       </Page>
     );
   }
