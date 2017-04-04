@@ -1,10 +1,13 @@
 import React from 'react';
 import { View } from 'react-native';
 import {
+  Gap,
   Page,
   Picker,
   Text,
 } from '../../../../components';
+
+import { books } from '../../../lib/data';
 
 class PickersPage extends React.Component {
   static navigationOptions = {
@@ -17,44 +20,51 @@ class PickersPage extends React.Component {
     super(props);
     this.state = {
       selected: 1,
+      selected2: 2,
     };
   }
 
-  onItemSelected() {
+  onItemSelected(stateName) {
     return (selected) => {
-      this.setState({ selected });
+      this.setState({ [stateName]: selected });
     };
   }
 
   getItems() {
     const items = {};
-    [0, 1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 14, 15, 16]
-      .forEach((id) => items[id] = {
-        headerText: `Item ${id}`,
-      });
+    books.forEach(book => items[book.id] = {
+      ...book,
+      headerText: book.title,
+      secondaryText: `${book.author.lastName}, ${book.author.firstName}`,
+    });
     return items;
   }
 
   render() {
     return (
-      <Page>
-        <View style={{ paddingTop: 24 }}>
-          <Picker
-            header="Random List of Items"
-            items={this.getItems()}
-            selected={this.state.selected}
-            onItemSelected={this.onItemSelected()}
-            showSearch
-          />
+      <Page
+        scrollable
+        keyboardShouldPersistTaps="always"
+      >
+        <Gap top={16} />
+        <Picker
+          header="Random list of books"
+          items={this.getItems()}
+          selected={this.state.selected}
+          onItemSelected={this.onItemSelected('selected')}
+          showSearch
+          searchKeys={['title', 'author.lastName', 'author.firstName']}
+        />
 
-          <Picker
-            header="Another Random List of Items"
-            items={this.getItems()}
-            selected={this.state.selected}
-            onItemSelected={this.onItemSelected()}
-            showSearch
-          />
-        </View>
+        <Gap top={16} />
+        <Picker
+          header="Random list of books"
+          items={this.getItems()}
+          selected={this.state.selected2}
+          onItemSelected={this.onItemSelected('selected2')}
+          showSearch
+          searchKeys={['title', 'author.lastName', 'author.firstName']}
+        />
       </Page>
     );
   }

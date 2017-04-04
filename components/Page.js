@@ -12,22 +12,28 @@ class Page extends React.Component {
     children: React.PropTypes.any.isRequired,
     scrollable: React.PropTypes.bool,
     style: React.PropTypes.any,
+    keyboardShouldPersistTaps: React.PropTypes.string,
   };
 
   static defaultProps = {
     scrollable: false,
+    keyboardShouldPersistTaps: 'never',
   };
 
   renderContent() {
     const {
       children,
+      keyboardShouldPersistTaps,
       scrollable,
       style,
     } = this.props;
 
     if (scrollable) {
       return (
-        <KeyboardAwareScrollView contentContainerStyle={style.scrollableContent}>
+        <KeyboardAwareScrollView
+          contentContainerStyle={style.scrollableContent}
+          keyboardShouldPersistTaps={keyboardShouldPersistTaps}
+        >
           {children}
         </KeyboardAwareScrollView>
       );

@@ -63,7 +63,9 @@ class Picker extends React.Component {
     return (search) => {
       let { items } = this.props;
       if (R.length(search) >= 1) {
-        items = this.fuzzySearcher.search(search);
+        const searchResults = this.fuzzySearcher.search(search);
+        items = {};
+        searchResults.forEach(result => items[R.prop('searchKey')(result)] = result);
       }
       this.setState({
         search,
@@ -74,7 +76,7 @@ class Picker extends React.Component {
 
   updateFuzzySearch(props) {
     const { items, searchKeys } = props;
-    const searchItems = Object.keys(items).map(i => R.prop(i, items));
+    const searchItems = Object.keys(items).map(i => ({ ...R.prop(i, items), searchKey: i }));
     const options = {
       ...fuzzySearchOptions,
       keys: searchKeys,
@@ -97,6 +99,7 @@ class Picker extends React.Component {
 
   itemSelected(key) {
     return () => {
+      console.log('itemSelected', key);
       this.props.onItemSelected(key);
       this.toggleOpen()();
     };
@@ -122,15 +125,16 @@ class Picker extends React.Component {
     const selectedItem = R.propOr({}, selected, items);
     const headerText = R.propOr('None', 'headerText', selectedItem);
     const leftContent = R.propOr(false, 'leftContent', selectedItem);
-    return (
-      <ListItem
-        headerText={headerText}
-        leftContent={leftContent}
-        rightContent={<Icon name="md-arrow-dropdown" />}
-        onPress={this.toggleOpen()}
-        divider
-      />
-    );
+    const rightContent = <Icon name="md-arrow-dropdown" />;
+    const onPress = this.toggleOpen();
+    const listItemProps = {
+      headerText,
+      leftContent,
+      rightContent,
+      onPress,
+      divider: true,
+    };
+    return <ListItem {...listItemProps} />;
   }
 
   renderSearch() {
@@ -147,6 +151,7 @@ class Picker extends React.Component {
             placeholder="Search"
             value={this.state.search}
             onChangeText={onChangeText}
+            autoCorrect={false}
           />
         </View>
       );
@@ -171,7 +176,6 @@ class Picker extends React.Component {
           secondaryTitle="Cancel"
           secondaryAction={this.toggleOpen()}
           visible={this.state.open}
-          keyboardShouldPersistTaps
         >
           {this.renderSearch()}
           <List

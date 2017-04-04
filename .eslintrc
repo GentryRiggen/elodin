@@ -5,6 +5,7 @@
   "rules": {
     "class-methods-use-this": "off",
     "global-require": "off",
+    "no-return-assign": "off",
     "import/no-extraneous-dependencies": "off",
     "import/prefer-default-export": "off",
     "jsx-a11y/label-has-for": "warn",
