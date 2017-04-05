@@ -125,9 +125,10 @@ class List extends React.Component {
       );
     }
 
-    return (
-      <View style={style.container}>
+  return (
+    <View style={style.container}>
         <ListView
+          keyboardShouldPersistTaps="handled"
           dataSource={this.state.dataSource}
           renderRow={rowData => <ListItem {...rowData} />}
           refreshControl={this.getRefreshControl()}
