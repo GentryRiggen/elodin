@@ -42,10 +42,7 @@ class PickersPage extends React.Component {
 
   render() {
     return (
-      <Page
-        scrollable
-        keyboardShouldPersistTaps="always"
-      >
+      <Page>
         <Gap top={16} />
         <Picker
           header="Random list of books"

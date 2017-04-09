@@ -99,7 +99,6 @@ class Picker extends React.Component {
 
   itemSelected(key) {
     return () => {
-      console.log('itemSelected', key);
       this.props.onItemSelected(key);
       this.toggleOpen()();
     };
