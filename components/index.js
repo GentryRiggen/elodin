@@ -3,7 +3,7 @@ import Avatar from './Avatar';
 import BarChart from './BarChart';
 import Button from './Button';
 import Checkbox from './Checkbox';
-import * as Constants from './lib/constants';
+import Constants from './lib/constants';
 import Gap from './Gap';
 import Icon from './Icon';
 import LineChart from './LineChart';
