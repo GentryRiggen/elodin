@@ -1,6 +1,6 @@
 {
   "name": "elodin-components",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "private": false,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
@@ -17,21 +17,21 @@
     "fuse.js": "^2.6.2",
     "moment": "^2.18.1",
     "ramda": "^0.23.0",
-    "react": "~15.4.1",
-    "react-native": "0.42.3",
+    "react": "16.0.0-alpha.6",
+    "react-native": "0.43.2",
     "react-native-actionsheet": "^2.1.0",
     "react-native-image-progress": "^0.6.0",
     "react-native-keyboard-aware-scroll-view": "^0.2.8",
     "react-native-menu": "^0.20.2",
     "react-native-progress": "^3.2.0",
-    "react-native-scrollable-tab-view": "^0.7.2",
+    "react-native-scrollable-tab-view": "^0.7.4",
     "react-native-sortable-listview": "^0.2.2",
     "react-native-swipeout": "git+https://github.com/magrinj/react-native-swipeout",
-    "react-native-vector-icons": "^4.0.0",
-    "react-navigation": "^1.0.0-beta.7",
-    "react-redux": "^5.0.1",
+    "react-native-vector-icons": "^4.0.1",
+    "react-navigation": "git+https://github.com/react-community/react-navigation.git#7edd9a7",
+    "react-redux": "^5.0.4",
     "redux": "^3.6.0",
-    "redux-saga": "^0.14.4",
+    "redux-saga": "^0.14.6",
     "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
@@ -46,7 +46,7 @@
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.10.3",
     "jest": "19.0.2",
-    "react-test-renderer": "~15.4.1",
+    "react-test-renderer": "^15.5.4",
     "remote-redux-devtools": "^0.5.7"
   },
   "jest": {
