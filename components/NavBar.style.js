@@ -35,7 +35,7 @@ const getStyle = (colors, font, dimensions) => ({
     alignItems: 'center',
     minHeight: 28,
     minWidth: 36,
-    paddingLeft: 12,
+    paddingLeft: 4,
   },
   headerTouchableRight: {
     flex: 1,
@@ -44,7 +44,7 @@ const getStyle = (colors, font, dimensions) => ({
     alignItems: 'center',
     minHeight: 28,
     minWidth: 36,
-    paddingRight: 12,
+    paddingRight: 4,
   },
   headerTouchableText: {
     color: colors.headerTextColor,

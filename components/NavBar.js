@@ -28,7 +28,7 @@ class NavBar extends React.Component {
     rightTitle: React.PropTypes.string,
     rightPress: React.PropTypes.func,
     rightDisabled: React.PropTypes.bool,
-    style: React.PropTypes.any,
+    style: React.PropTypes.any.isRequired,
   };
 
   static defaultProps = {
@@ -113,9 +113,9 @@ class NavBar extends React.Component {
           >
             {rightTitle}
           </Text>
-        ) : (
+      ) : (
           <View
-            style={{paddingRight: 8}}
+            style={{ paddingRight: 8 }}
           >
             <Icon
               name="md-more"

@@ -72,8 +72,8 @@ const getStyle = (colors, font, dimensions) => ({
 
   '.narrow': {
     [Constants.components.View]: {
-      paddingLeft: 4,
-      paddingRight: 4,
+      paddingLeft: 0,
+      paddingRight: 0,
     },
   },
   '.flex-start': {

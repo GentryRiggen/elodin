@@ -437,7 +437,7 @@ const font = {
   fontFamilyLight: 'System',
   fontWeightLight: '200',
 
-  fontSizeTitle: 20,
+  fontSizeTitle: 18,
   fontHeightTitle: 28,
 
   fontSizeSubheading: 16,

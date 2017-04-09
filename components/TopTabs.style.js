@@ -1,6 +1,4 @@
-import Constants from './lib/constants';
-
-const getStyle = (colors, font, dimensions) => ({
+const getStyle = (colors, font) => ({
   tabBar: {
     backgroundColor: colors.tabBarBackgroundColor,
   },
@@ -26,11 +24,6 @@ const getStyle = (colors, font, dimensions) => ({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: colors.tabBarBackgroundColor,
-  },
-  [`${Constants.domain}.Button`]: {
-    container: {
-      height: dimensions.topTabBarHeight,
-    },
   },
 });
 
