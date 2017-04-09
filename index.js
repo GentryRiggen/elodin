@@ -3,7 +3,7 @@ import Avatar from './components/Avatar';
 import BarChart from './components/BarChart';
 import Button from './components/Button';
 import Checkbox from './components/Checkbox';
-import * as Constants from './components/lib/constants';
+import Constants from './components/lib/constants';
 import Icon from './components/Icon';
 import { focusTextInput } from './components/utils';
 import Gap from './components/Gap';
