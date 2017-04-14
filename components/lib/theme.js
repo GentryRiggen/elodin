@@ -427,6 +427,11 @@ const dimensions = {
   listItemLeftMargin: 16,
 
   pickerLabelLeftMargin: 20,
+
+  avatarSizeSm: 24,
+  avatarSizeMd: 48,
+  avatarSizeLg: 64,
+  avatarSizeXl: 128,
 };
 
 const font = {
