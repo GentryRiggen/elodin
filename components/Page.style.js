@@ -1,4 +1,23 @@
-const getStyle = (colors) => ({
+const getStyle = (colors, font, dimensions) => ({
+  '.v-spacing': {
+    container: {
+      paddingVertical: dimensions.pagePadding,
+    },
+  },
+  '.h-spacing': {
+    container: {
+      paddingHorizontal: dimensions.pagePadding,
+    },
+  },
+  '.spacing': {
+    container: {
+      padding: dimensions.pagePadding,
+    },
+  },
+  '.t-spacing': { container: { paddingTop: dimensions.pagePadding } },
+  '.r-spacing': { container: { paddingRight: dimensions.pagePadding } },
+  '.b-spacing': { container: { paddingBottom: dimensions.pagePadding } },
+  '.l-spacing': { container: { paddingLeft: dimensions.pagePadding } },
   container: {
     position: 'absolute',
     top: 0,

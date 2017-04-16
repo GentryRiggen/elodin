@@ -124,13 +124,10 @@ class ColorsPage extends React.Component {
       paddingTop: 16,
       paddingBottom: 16,
     };
-    const textStyle = {
-      paddingLeft: 16,
-    };
     const { options } = this.props.componentsTheme;
 
     return (
-      <Page>
+      <Page styleName="l-spacing">
         <View style={viewStyle}>
           <Picker
             header="Primary Color"

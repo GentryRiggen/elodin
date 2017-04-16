@@ -417,6 +417,7 @@ const colors = {
 };
 
 const dimensions = {
+  pagePadding: 16,
   buttonHeight: 48,
   radioButtonSize: 28,
   checkboxSize: 24,

@@ -8,6 +8,7 @@ import Icon from './Icon';
 import List from './List';
 import ListItem from './ListItem';
 import Modal from './Modal';
+import Page from './Page';
 import Text from './Text';
 import TextInput from './TextInput';
 import View from './View';
@@ -176,15 +177,17 @@ class Picker extends React.Component {
           secondaryAction={this.toggleOpen()}
           visible={this.state.open}
         >
-          {this.renderSearch()}
-          <List
-            dataSource={Object.keys(items).map(key => ({
-              ...items[key],
-              onPress: this.itemSelected(key),
-              divider: true,
-              rightContent: this.renderSelected(key),
-            }))}
-          />
+          <Page>
+            {this.renderSearch()}
+            <List
+              dataSource={Object.keys(items).map(key => ({
+                ...items[key],
+                onPress: this.itemSelected(key),
+                divider: true,
+                rightContent: this.renderSelected(key),
+              }))}
+            />
+          </Page>
         </Modal>
       </View>
     );
