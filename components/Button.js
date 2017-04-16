@@ -1,21 +1,26 @@
-import React from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import R from 'ramda';
 import { TouchableOpacity } from 'react-native';
 import { connectStyle } from '@shoutem/theme';
 import Constants from './lib/constants';
 import View from './View';
 import Text from './Text';
 
-class Button extends React.Component {
+class Button extends Component {
   static propTypes = {
-    disabled: React.PropTypes.bool,
-    noRipple: React.PropTypes.bool,
-    onPress: React.PropTypes.func.isRequired,
-    text: React.PropTypes.string,
-    style: React.PropTypes.any,
+    children: PropTypes.any,
+    disabled: PropTypes.bool,
+    noRipple: PropTypes.bool,
+    onPress: PropTypes.func,
+    text: PropTypes.string,
+    style: PropTypes.any,
   };
 
   static defaultProps = {
+    children: null,
     disabled: false,
+    onPress: () => null,
     text: '',
     noRipple: false,
   };
@@ -33,7 +38,7 @@ class Button extends React.Component {
       style,
     } = this.props;
     const buttonOnPress = disabled ? (() => null) : onPress;
-    const content = text
+    const content = !R.isEmpty(text)
       ? (
         <Text>
           {text.toUpperCase()}

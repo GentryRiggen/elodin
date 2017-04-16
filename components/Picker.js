@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import R from 'ramda';
 import { connectStyle } from '@shoutem/theme';
+import { TouchableOpacity } from 'react-native';
 import Fuse from 'fuse.js';
 
 import Constants from './lib/constants';
@@ -26,21 +28,23 @@ const fuzzySearchOptions = {
   ],
 };
 
-class Picker extends React.Component {
+class Picker extends Component {
   static propTypes = {
-    header: React.PropTypes.string,
-    items: React.PropTypes.object.isRequired,
-    selected: React.PropTypes.any.isRequired,
-    onItemSelected: React.PropTypes.func.isRequired,
-    style: React.PropTypes.any,
-    showSearch: React.PropTypes.bool,
-    onSearch: React.PropTypes.func,
-    searchKeys: React.PropTypes.array,
+    header: PropTypes.string,
+    items: PropTypes.object.isRequired,
+    selected: PropTypes.any.isRequired,
+    onItemSelected: PropTypes.func.isRequired,
+    button: PropTypes.node,
+    style: PropTypes.any,
+    showSearch: PropTypes.bool,
+    onSearch: PropTypes.func,
+    searchKeys: PropTypes.array,
   };
 
   static defaultProps = {
     header: '',
     onSearch: noop,
+    button: null,
     showSearch: false,
     searchKeys: ['headerText'],
   };
@@ -120,13 +124,19 @@ class Picker extends React.Component {
   renderButton() {
     const {
       items,
+      button,
       selected,
     } = this.props;
+
+    const onPress = this.toggleOpen();
+
+    if (button) {
+      return React.cloneElement(button, { onPress });
+    }
     const selectedItem = R.propOr({}, selected, items);
     const headerText = R.propOr('None', 'headerText', selectedItem);
     const leftContent = R.propOr(false, 'leftContent', selectedItem);
     const rightContent = <Icon name="md-arrow-dropdown" />;
-    const onPress = this.toggleOpen();
     const listItemProps = {
       headerText,
       leftContent,
@@ -163,7 +173,7 @@ class Picker extends React.Component {
   render() {
     const { header, style } = this.props;
     const { items } = this.state;
-    const headerText = header.length > 0
+    const headerText = !R.isEmpty(header)
       ? <Text styleName="small" style={style.label}>{header}</Text>
       : null;
     return (

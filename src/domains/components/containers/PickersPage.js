@@ -1,6 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 import {
+  Button,
   Gap,
   Page,
   Picker,
@@ -21,6 +22,7 @@ class PickersPage extends React.Component {
     this.state = {
       selected: 1,
       selected2: 2,
+      selected3: 3,
     };
   }
 
@@ -59,6 +61,17 @@ class PickersPage extends React.Component {
           items={this.getItems()}
           selected={this.state.selected2}
           onItemSelected={this.onItemSelected('selected2')}
+          showSearch
+          searchKeys={['title', 'author.lastName', 'author.firstName']}
+        />
+
+        <Gap top={16} />
+        <Picker
+          header="Customer Picker Random Books"
+          items={this.getItems()}
+          button={<Button text="Custom Button" />}
+          selected={this.state.selected3}
+          onItemSelected={this.onItemSelected('selected3')}
           showSearch
           searchKeys={['title', 'author.lastName', 'author.firstName']}
         />

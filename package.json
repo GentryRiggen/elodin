@@ -1,6 +1,6 @@
 {
   "name": "elodin-components",
-  "version": "0.0.24",
+  "version": "0.0.25",
   "private": false,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
@@ -16,6 +16,7 @@
     "d3-shape": "^1.0.4",
     "fuse.js": "^2.6.2",
     "moment": "^2.18.1",
+    "prop-types": "^15.5.8",
     "ramda": "^0.23.0",
     "react": "16.0.0-alpha.6",
     "react-native": "0.43.2",
