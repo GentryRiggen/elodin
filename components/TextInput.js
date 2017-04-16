@@ -24,6 +24,7 @@ class TextInput extends Component {
     requiredError: PropTypes.string,
     style: PropTypes.any.isRequired,
     validateOn: PropTypes.oneOf(['blur', 'change', 'submit']),
+    value: PropTypes.string.isRequired,
     onSubmitEditing: PropTypes.func,
     onBlur: () => null,
   };
@@ -45,7 +46,7 @@ class TextInput extends Component {
     super(props);
     this.state = {
       focused: false,
-      value: '',
+      value: props.value || '',
       dirty: true,
       errorText: '',
       hasError: false,
@@ -138,6 +139,7 @@ class TextInput extends Component {
   }
 
   renderLabel() {
+    console.log(this.props.label, this.state.focused, this.state.value);
     if (this.props.label && (this.state.focused || !R.isEmpty(this.state.value))) {
       const label = R.propOr('', 'placeholder', this.props);
       return (

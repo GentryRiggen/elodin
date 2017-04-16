@@ -34,7 +34,7 @@ class TextInputsPage extends React.Component {
     super(props);
 
     this.state = {
-      text1: '',
+      text1: 'Hello, World',
       text2: '',
       text3: '',
       text4: '',
