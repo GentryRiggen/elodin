@@ -14,27 +14,35 @@ const getStyle = (colors, font, dimensions) => ({
 
   '.multiline': {
     container: {
-      height: 96,
+      height: 106,
     },
     input: {
-      height: 92,
+      height: 80,
     },
   },
 
   container: {
-    height: 48,
+    height: 60,
     flexDirection: 'column',
+    justifyContent: 'flex-end',
+  },
+  label: {
+    marginTop: 4,
+  },
+  emptyLabel: {
+    height: 12,
   },
   input: {
-    height: 44,
+    height: 36,
     fontFamily: font.fontFamilyRegular,
     fontSize: font.fontSizeBody,
     color: colors.darkTextColor,
   },
   placeholderTextColor: colors.disabledDarkTextColor,
   border: {
-    height: 1,
-    backgroundColor: colors.grey[300],
+    height: 2,
+    borderBottomColor: colors.grey[300],
+    borderBottomWidth: 1,
   },
   focusedBorder: {
     height: 2,

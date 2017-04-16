@@ -118,7 +118,7 @@ class ComponentsListPage extends React.Component {
       ],
     });
     // const { navigate } = this.props.navigation;
-    // navigate(routes.ROUTE_AVATARS);
+    this.props.navigation.navigate(routes.ROUTE_TEXT_INPUT);
   }
 
 

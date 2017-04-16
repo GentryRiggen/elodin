@@ -17,6 +17,7 @@ class TextInput extends Component {
   static propTypes = {
     onChangeText: PropTypes.func.isRequired,
     disabled: PropTypes.bool,
+    label: PropTypes.bool,
     minLength: PropTypes.number,
     minLengthError: PropTypes.string,
     required: PropTypes.bool,
@@ -29,6 +30,7 @@ class TextInput extends Component {
 
   static defaultProps = {
     disabled: false,
+    label: true,
     minLength: 0,
     minLengthError: 'Too short',
     required: false,
@@ -135,11 +137,27 @@ class TextInput extends Component {
     };
   }
 
+  renderLabel() {
+    if (this.props.label && (this.state.focused || !R.isEmpty(this.state.value))) {
+      const label = R.propOr('', 'placeholder', this.props);
+      return (
+        <Text
+          style={this.props.style.label}
+          styleName="small"
+        >
+          {label}
+        </Text>
+      );
+    }
+
+    return <View style={this.props.style.emptyLabel} />;
+  }
+
   renderErrorText() {
     if (this.state.hasError) {
       return <Text styleName="small error" >{this.state.errorText}</Text>;
     }
-    return null;
+    return <View style={this.props.style.emptyLabel} />;
   }
 
   renderDivider() {
@@ -164,6 +182,7 @@ class TextInput extends Component {
 
     return (
       <View style={style.container}>
+        {this.renderLabel()}
         <NativeTextInput
           {...this.props}
           style={style.input}
