@@ -139,7 +139,6 @@ class TextInput extends Component {
   }
 
   renderLabel() {
-    console.log(this.props.label, this.state.focused, this.state.value);
     if (this.props.label && (this.state.focused || !R.isEmpty(this.state.value))) {
       const label = R.propOr('', 'placeholder', this.props);
       return (
