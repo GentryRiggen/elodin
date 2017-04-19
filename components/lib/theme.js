@@ -421,8 +421,11 @@ const dimensions = {
   buttonHeight: 48,
   radioButtonSize: 28,
   checkboxSize: 24,
+
   tabBarHeight: 48,
   topTabBarHeight: 48,
+
+  navBarHeight: 64,
 
   listItemMinHeight: 48,
   listItemLeftMargin: 16,

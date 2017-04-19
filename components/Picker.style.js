@@ -3,7 +3,7 @@ const getStyle = (colors, font, dimensions) => ({
     marginLeft: dimensions.pickerLabelLeftMargin,
   },
   searchBox: {
-    paddingTop: 4,
+    paddingTop: dimensions.navBarHeight + 4,
     paddingRight: dimensions.pickerLabelLeftMargin,
     paddingBottom: 4,
     paddingLeft: dimensions.pickerLabelLeftMargin,

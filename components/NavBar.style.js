@@ -1,6 +1,6 @@
 const getStyle = (colors, font, dimensions) => ({
   header: {
-    minHeight: 64,
+    minHeight: dimensions.navBarHeight,
     paddingTop: 20,
     backgroundColor: colors.navBarBackgroundColor,
     shadowColor: colors.grey[500],
