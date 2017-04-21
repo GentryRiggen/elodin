@@ -54,6 +54,7 @@ export default class AnimatedArtShape extends React.Component {
       const dFrom = this.previousGraph;
       const dTo = d;
 
+    // eslint-disable-next-line
       cancelAnimationFrame(this.animating);
       this.animating = null;
 
@@ -69,6 +70,7 @@ export default class AnimatedArtShape extends React.Component {
 
   // This is where we animate our graph's path value.
   animate(start) {
+    // eslint-disable-next-line
     this.animating = requestAnimationFrame((timestamp) => {
       // eslint-disable-next-line no-param-reassign
       if (!start) start = timestamp;

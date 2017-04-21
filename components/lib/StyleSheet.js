@@ -3,15 +3,16 @@ import {
   Platform,
 } from 'react-native';
 
-const create = (styles: Object): {[name: string]: number} => {
+const create = (styles) => {
   const platformStyles = {};
   Object.keys(styles).forEach((name) => {
-    let {ios, android, ...style} = {...styles[name]};
+    const { ios, android } = { ...styles[name] };
+    let { ...style } = { ...styles[name] };
     if (ios && Platform.OS === 'ios') {
-      style = {...style, ...ios};
+      style = { ...style, ...ios };
     }
     if (android && Platform.OS === 'android') {
-      style = {...style, ...android};
+      style = { ...style, ...android };
     }
     platformStyles[name] = style;
   });

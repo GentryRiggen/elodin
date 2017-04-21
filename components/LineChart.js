@@ -2,9 +2,7 @@ import React from 'react';
 import {
   ART,
   Dimensions,
-  LayoutAnimation,
 } from 'react-native';
-import Morph from 'art/morph/path';
 import { connectStyle } from '@shoutem/theme';
 import Constants from './lib/constants';
 import graphing from './lib/graphing';
@@ -15,7 +13,6 @@ import View from './View';
 const {
   Surface,
   Group,
-  Shape,
 } = ART;
 const dimensionWindow = Dimensions.get('window');
 const xLabelHeight = 48;
@@ -64,7 +61,6 @@ class LineChart extends React.Component {
 
   computeNextState(nextProps) {
     const {
-      animationDurationMs,
       data,
       width,
       height,
@@ -169,7 +165,7 @@ class LineChart extends React.Component {
                 height: dotSize,
                 left: tick.x - (dotSize / 2),
                 top: tick.y - (dotSize / 2),
-                borderRadius: (dotSize / 2)
+                borderRadius: (dotSize / 2),
               }}
             />
           ))}

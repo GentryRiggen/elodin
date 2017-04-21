@@ -1,4 +1,4 @@
-const getStyle = (colors) => ({
+const getStyle = colors => ({
   container: {
     flex: 1,
     flexDirection: 'column',

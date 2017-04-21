@@ -61,7 +61,6 @@ const createPieGraph = ({
   innerRadius,
   outerRadius,
   selected,
-  size,
   valueSelector,
 }) => {
   const radiusSelected = outerRadius + 12;

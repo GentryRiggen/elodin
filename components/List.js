@@ -4,9 +4,10 @@ import {
   RefreshControl,
   View,
 } from 'react-native';
-import { connectStyle } from '@shoutem/theme';
-import Constants from './lib/constants';
 import SortableListView from 'react-native-sortable-listview';
+import { connectStyle } from '@shoutem/theme';
+
+import Constants from './lib/constants';
 import Icon from './Icon';
 import ListItem from './ListItem';
 import Spinner from './Spinner';
@@ -125,8 +126,8 @@ class List extends React.Component {
       );
     }
 
-  return (
-    <View style={style.container}>
+    return (
+      <View style={style.container}>
         <ListView
           keyboardShouldPersistTaps="handled"
           dataSource={this.state.dataSource}

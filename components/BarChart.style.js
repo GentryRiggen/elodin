@@ -1,6 +1,6 @@
-import Constants from './lib/constants';
+import { domain } from './lib/constants';
 
-const getStyle = (colors, font, dimensions) => ({
+const getStyle = colors => ({
   container: {
     flexDirection: 'row',
     alignItems: 'flex-start',
@@ -14,7 +14,7 @@ const getStyle = (colors, font, dimensions) => ({
   },
 
   bar: {
-    [`${Constants.domain}.AnimatedView`]: {
+    [`${domain}.AnimatedView`]: {
       backgroundColor: colors.primaryColor,
       borderTopLeftRadius: 2,
       borderTopRightRadius: 2,
@@ -25,7 +25,7 @@ const getStyle = (colors, font, dimensions) => ({
   },
 
   xLegend: {
-    [`${Constants.domain}.Text`]: {
+    [`${domain}.Text`]: {
       transform: [{
         rotate: '-82deg',
       }],

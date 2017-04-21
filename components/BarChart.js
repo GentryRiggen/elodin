@@ -80,31 +80,29 @@ class BarChart extends React.Component {
     const {
       style,
     } = this.props;
-    return this.state.data.map((bar, index) => {
-      return (
-        <View
-          key={`${bar.x}-${bar.y}-${index}`}
-          style={style.bar}
-        >
-          <AnimatedView
-            style={{
-              width: 36,
-              height: this.state.data[index].height,
-            }}
-          />
+    return this.state.data.map((bar, index) => (
+      <View
+        key={`${bar.x}-${bar.y}-${index}`}
+        style={style.bar}
+      >
+        <AnimatedView
+          style={{
+            width: 36,
+            height: this.state.data[index].height,
+          }}
+        />
 
-          <View style={style.xLegend}>
-            <Text
-              styleName="small"
-              numberOfLines={1}
-              ellipsizeMode="tail"
-            >
-              {bar.x}
-            </Text>
-          </View>
+        <View style={style.xLegend}>
+          <Text
+            styleName="small"
+            numberOfLines={1}
+            ellipsizeMode="tail"
+          >
+            {bar.x}
+          </Text>
         </View>
-      );
-    });
+      </View>
+    ));
   }
 
   renderYLegend() {

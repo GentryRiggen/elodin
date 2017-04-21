@@ -1,33 +1,33 @@
-import Constants from './lib/constants';
+import Constants, { domain } from './lib/constants';
 
-const getStyle = (colors, font, dimensions) => ({
+const getStyle = (colors, font) => ({
   '.flat': {
     underlayColor: 'transparent',
     '.accent': {
       underlayColor: colors.accentColor,
-      [`${Constants.domain}.Text`]: {
+      [`${domain}.Text`]: {
         color: colors.accentColor,
       },
     },
     '.secondary': {
       underlayColor: colors.secondaryDarkTextColor,
-      [`${Constants.domain}.Text`]: {
+      [`${domain}.Text`]: {
         color: colors.secondaryDarkTextColor,
       },
     },
     '.inverse-secondary': {
       underlayColor: colors.secondaryLightTextColor,
-      [`${Constants.domain}.Text`]: {
+      [`${domain}.Text`]: {
         color: colors.secondaryLightTextColor,
       },
     },
     '.disabled': {
-      [`${Constants.domain}.Text`]: {
+      [`${domain}.Text`]: {
         color: colors.disabledDarkTextColor,
       },
     },
     '.inverse-disabled': {
-      [`${Constants.domain}.Text`]: {
+      [`${domain}.Text`]: {
         color: colors.disabledLightTextColor,
       },
     },
@@ -37,7 +37,7 @@ const getStyle = (colors, font, dimensions) => ({
     underlayColor: colors.white.full,
     [Constants.components.View]: {
       backgroundColor: colors.primaryColor,
-      [`${Constants.domain}.Text`]: {
+      [`${domain}.Text`]: {
         color: colors.white.full,
       },
     },
@@ -45,7 +45,7 @@ const getStyle = (colors, font, dimensions) => ({
       underlayColor: colors.white.full,
       [Constants.components.View]: {
         backgroundColor: colors.accentColor,
-        [`${Constants.domain}.Text`]: {
+        [`${domain}.Text`]: {
           color: colors.white.full,
         },
       },
@@ -54,7 +54,7 @@ const getStyle = (colors, font, dimensions) => ({
       underlayColor: colors.white.full,
       [Constants.components.View]: {
         backgroundColor: colors.grey[200],
-        [`${Constants.domain}.Text`]: {
+        [`${domain}.Text`]: {
           color: colors.secondaryDarkTextColor,
         },
       },
@@ -63,7 +63,7 @@ const getStyle = (colors, font, dimensions) => ({
       underlayColor: colors.white.full,
       [Constants.components.View]: {
         backgroundColor: colors.grey[500],
-        [`${Constants.domain}.Text`]: {
+        [`${domain}.Text`]: {
           color: colors.disabledLightTextColor,
         },
       },
@@ -100,7 +100,7 @@ const getStyle = (colors, font, dimensions) => ({
     alignItems: 'center',
     justifyContent: 'center',
     overflow: 'hidden',
-    [`${Constants.domain}.Text`]: {
+    [`${domain}.Text`]: {
       fontFamily: font.fontFamilyBold,
       fontWeight: font.fontWeightBold,
       color: colors.primaryColor,
