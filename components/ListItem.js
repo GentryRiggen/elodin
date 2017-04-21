@@ -19,7 +19,7 @@ class ListItem extends React.Component {
     leftSwipeButtons: React.PropTypes.array,
     rightSwipeButtons: React.PropTypes.array,
     rightContent: React.PropTypes.node,
-    sortHandlers: React.PropTypes.any.isRequired,
+    sortHandlers: React.PropTypes.any,
     style: React.PropTypes.any.isRequired,
   };
 
