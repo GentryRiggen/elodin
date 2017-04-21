@@ -1,12 +1,14 @@
 const getStyle = (colors, font, dimensions) => ({
+  container: {
+    flex: 1,
+    paddingTop: dimensions.navBarHeight,
+  },
   label: {
     marginLeft: dimensions.pickerLabelLeftMargin,
   },
   searchBox: {
-    paddingTop: dimensions.navBarHeight + 4,
-    paddingRight: dimensions.pickerLabelLeftMargin,
-    paddingBottom: 4,
-    paddingLeft: dimensions.pickerLabelLeftMargin,
+    paddingVertical: 4,
+    paddingHorizontal: dimensions.pickerLabelLeftMargin,
     backgroundColor: colors.grey[100],
   },
 });

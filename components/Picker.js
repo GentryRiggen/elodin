@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import R from 'ramda';
 import { connectStyle } from '@shoutem/theme';
-import { TouchableOpacity } from 'react-native';
 import Fuse from 'fuse.js';
 
 import Constants from './lib/constants';
@@ -188,15 +187,17 @@ class Picker extends Component {
           visible={this.state.open}
         >
           <Page>
-            {this.renderSearch()}
-            <List
-              dataSource={Object.keys(items).map(key => ({
-                ...items[key],
-                onPress: this.itemSelected(key),
-                divider: true,
-                rightContent: this.renderSelected(key),
-              }))}
-            />
+            <View style={style.container}>
+              {this.renderSearch()}
+              <List
+                dataSource={Object.keys(items).map(key => ({
+                  ...items[key],
+                  onPress: this.itemSelected(key),
+                  divider: true,
+                  rightContent: this.renderSelected(key),
+                }))}
+              />
+            </View>
           </Page>
         </Modal>
       </View>

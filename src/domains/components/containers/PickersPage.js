@@ -47,7 +47,15 @@ class PickersPage extends React.Component {
       <Page>
         <Gap top={16} />
         <Picker
-          header="Random list of books"
+          header="Random list of books (No Search)"
+          items={this.getItems()}
+          selected={this.state.selected}
+          onItemSelected={this.onItemSelected('selected')}
+        />
+
+        <Gap top={16} />
+        <Picker
+          header="Random list of books (Search)"
           items={this.getItems()}
           selected={this.state.selected}
           onItemSelected={this.onItemSelected('selected')}
