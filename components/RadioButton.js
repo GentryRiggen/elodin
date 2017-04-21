@@ -6,29 +6,24 @@ import {
 import { connectStyle } from '@shoutem/theme';
 import Constants from './lib/constants';
 
-class RadioButton extends React.Component {
-  static propTypes = {
-    checked: React.PropTypes.bool.isRequired,
-    onPress: React.PropTypes.func.isRequired,
-    style: React.PropTypes.any.isRequired,
-  };
+const RadioButton = ({ checked, onPress, style }) => (
+  <TouchableHighlight
+    style={style.container}
+    onPress={onPress}
+    underlayColor="transparent"
+  >
+    {
+      checked
+        ? <View style={{ ...style.innerButton, ...style.checked }} />
+        : <View style={{ ...style.innerButton, ...style.unChecked }} />
+    }
+  </TouchableHighlight>
+);
 
-  render() {
-    const { checked, onPress, style } = this.props;
-    const checkedContainer = checked
-      ? <View style={{ ...style.innerButton, ...style.checked }} />
-      : <View style={{ ...style.innerButton, ...style.unChecked }} />;
-
-    return (
-      <TouchableHighlight
-        style={style.container}
-        onPress={onPress}
-        underlayColor="transparent"
-      >
-        {checkedContainer}
-      </TouchableHighlight>
-    );
-  }
-}
+RadioButton.propTypes = {
+  checked: React.PropTypes.bool.isRequired,
+  onPress: React.PropTypes.func.isRequired,
+  style: React.PropTypes.any.isRequired,
+};
 
 export default connectStyle(Constants.components.RadioButton)(RadioButton);

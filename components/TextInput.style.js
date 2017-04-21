@@ -1,4 +1,4 @@
-const getStyle = (colors, font, dimensions) => ({
+const getStyle = (colors, font) => ({
   '.disabled': {
     input: {
       color: colors.disabledDarkTextColor,

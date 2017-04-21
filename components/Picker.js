@@ -109,6 +109,7 @@ class Picker extends Component {
   }
 
   renderSelected(key) {
+    // eslint-disable-next-line
     if (this.props.selected == key) {
       return (
         <Icon

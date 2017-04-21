@@ -113,7 +113,7 @@ class NavBar extends React.Component {
           >
             {rightTitle}
           </Text>
-      ) : (
+        ) : (
           <View
             style={{ paddingRight: 8 }}
           >

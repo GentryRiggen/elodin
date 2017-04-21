@@ -4,23 +4,18 @@ import { connectStyle } from '@shoutem/theme';
 import Constants from './lib/constants';
 import View from './View';
 
-class Spinner extends React.Component {
-  static propTypes = {
-    style: React.PropTypes.any.isRequired,
-  };
+const Spinner = ({ style }) => (
+  <View style={style.container}>
+    <CircleSnail
+      color={style.color}
+      duration={700}
+      size={style.size}
+    />
+  </View>
+);
 
-  render() {
-    const { style } = this.props;
-    return (
-      <View style={style.container}>
-        <CircleSnail
-          color={style.color}
-          duration={700}
-          size={style.size}
-        />
-      </View>
-    );
-  }
-}
+Spinner.propTypes = {
+  style: React.PropTypes.any.isRequired,
+};
 
 export default connectStyle(Constants.components.Spinner)(Spinner);

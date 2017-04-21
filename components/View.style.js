@@ -1,4 +1,4 @@
-const getStyle = (colors, font, dimensions) => ({
+const getStyle = () => ({
 });
 
 export default getStyle;

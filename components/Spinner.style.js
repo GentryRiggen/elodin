@@ -1,4 +1,4 @@
-const getStyle = (colors, font) => ({
+const getStyle = colors => ({
   '.regular': {
     color: colors.darkTextColor,
   },

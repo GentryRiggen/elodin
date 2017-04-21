@@ -19,7 +19,8 @@ class ListItem extends React.Component {
     leftSwipeButtons: React.PropTypes.array,
     rightSwipeButtons: React.PropTypes.array,
     rightContent: React.PropTypes.node,
-    style: React.PropTypes.any,
+    sortHandlers: React.PropTypes.any.isRequired,
+    style: React.PropTypes.any.isRequired,
   };
 
   static defaultProps = {
@@ -79,7 +80,7 @@ class ListItem extends React.Component {
       style,
     } = this.props;
     if (divider) {
-      return <View style={style.divider}/>;
+      return <View style={style.divider} />;
     }
 
     return null;

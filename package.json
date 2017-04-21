@@ -4,7 +4,9 @@
   "private": false,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint --quiet",
+    "lint-staged": "lint-staged"
   },
   "dependencies": {
     "@shoutem/theme": "^0.9.0",
@@ -47,6 +49,8 @@
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.10.3",
     "jest": "19.0.2",
+    "lint-staged": "^3.4.0",
+    "pre-commit": "^1.2.2",
     "react-test-renderer": "^15.5.4",
     "remote-redux-devtools": "^0.5.7"
   },

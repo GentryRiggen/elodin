@@ -1,4 +1,4 @@
-const getStyle = (colors, font, dimensions) => ({
+const getStyle = colors => ({
   footerTab: {
     flex: 1,
   },

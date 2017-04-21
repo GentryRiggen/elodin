@@ -5,25 +5,20 @@ import Constants from './lib/constants';
 import Text from './Text';
 import View from './View';
 
-class ListSwipeButton extends React.Component {
-  static propTypes = {
-    text: React.PropTypes.string.isRequired,
-    onPress: React.PropTypes.func.isRequired,
-    style: React.PropTypes.any.isRequired,
-  };
+const ListSwipeButton = ({ onPress, style, text }) => (
+  <TouchableWithoutFeedback onPress={onPress}>
+    <View style={style}>
+      <Text styleName="regular bold inverse">
+        {text}
+      </Text>
+    </View>
+  </TouchableWithoutFeedback>
+);
 
-  render() {
-    const { text, onPress, style } = this.props;
-    return (
-      <TouchableWithoutFeedback onPress={onPress}>
-        <View style={style}>
-          <Text styleName="regular bold inverse">
-            {text}
-          </Text>
-        </View>
-      </TouchableWithoutFeedback>
-    );
-  }
-}
+ListSwipeButton.propTypes = {
+  onPress: React.PropTypes.func.isRequired,
+  style: React.PropTypes.any.isRequired,
+  text: React.PropTypes.string.isRequired,
+};
 
 export default connectStyle(Constants.components.ListSwipeButton)(ListSwipeButton);

@@ -1,4 +1,4 @@
-const getStyle = (colors, font, dimensions) => ({
+const getStyle = colors => ({
   container: {
     flexDirection: 'row',
     alignItems: 'center',

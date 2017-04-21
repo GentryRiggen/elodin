@@ -9,9 +9,7 @@ import Constants from './lib/constants';
 import Text from './Text';
 
 const checkRequired = value => value.length === 0;
-const checkMinLength = (minLength) => {
-  return value => value.length < minLength;
-};
+const checkMinLength = minLength => value => value.length < minLength;
 
 class TextInput extends Component {
   static propTypes = {
