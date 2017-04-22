@@ -30,6 +30,14 @@ class ListItemsPage extends React.Component {
     this.addToList(true, 0)();
   }
 
+  onRowMoved() {
+    return (e) => {
+      const sortOrder = [...this.state.sortOrder];
+      sortOrder.splice(e.to, 0, sortOrder.splice(e.from, 1)[0]);
+      this.setState({ sortOrder });
+    };
+  }
+
   addItems(reset) {
     return () => {
       const lotsOText = 'Bro! What\'s up?!? Long time no see. How\'s life? Still lifting and getting dem gainz? Yeah me to. Gainz for life. [FIST BUMP]';
@@ -109,14 +117,6 @@ class ListItemsPage extends React.Component {
     };
   }
 
-  onRowMoved() {
-    return (e) => {
-      const sortOrder = [...this.state.sortOrder];
-      sortOrder.splice(e.to, 0, sortOrder.splice(e.from, 1)[0]);
-      this.setState({ sortOrder });
-    };
-  }
-
   render() {
     const {
       fetchingMore,
@@ -125,7 +125,6 @@ class ListItemsPage extends React.Component {
       sorting,
       sortOrder,
     } = this.state;
-    const title = sorting ? 'Reordering Items' : `${this.state.items.length} List Items`;
 
     return (
       <Page>

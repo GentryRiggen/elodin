@@ -17,27 +17,29 @@ const noOp = () => null;
 class List extends React.Component {
   static propTypes = {
     dataSource: React.PropTypes.any.isRequired,
-    onRefreshRequested: React.PropTypes.func,
     isRefreshing: React.PropTypes.bool,
-    onEndReached: React.PropTypes.func,
-    onEndReachedThreshold: React.PropTypes.number,
     isFetchingMore: React.PropTypes.bool,
     isSorting: React.PropTypes.bool,
-    sortOrder: React.PropTypes.array,
+    onEndReached: React.PropTypes.func,
+    onEndReachedThreshold: React.PropTypes.number,
     onRowMoved: React.PropTypes.func,
+    onRefreshRequested: React.PropTypes.func,
+    renderRow: React.PropTypes.func,
+    sortOrder: React.PropTypes.array,
     style: React.PropTypes.any.isRequired,
   };
 
   static defaultProps = {
     dataSource: [],
-    onRefreshRequested: noOp,
+    isFetchingMore: false,
     isRefreshing: false,
+    isSorting: false,
     onEndReached: noOp,
     onEndReachedThreshold: 250,
-    isFetchingMore: false,
-    isSorting: false,
-    sortOrder: [],
+    onRefreshRequested: noOp,
     onRowMoved: noOp,
+    renderRow: noOp,
+    sortOrder: [],
   };
 
   constructor(props) {
@@ -85,6 +87,32 @@ class List extends React.Component {
     return null;
   }
 
+  renderRow() {
+    const { isSorting, renderRow } = this.props;
+    if (renderRow !== noOp) {
+      return renderRow;
+    } else if (isSorting) {
+      return row => (
+        <ListItem
+          {...{
+            ...row,
+            rightContent: (
+              <Icon
+                name="md-reorder"
+                size={24}
+                type="regular"
+              />
+            ),
+            leftSwipeButtons: [],
+            rightSwipeButtons: [],
+          }}
+        />
+      );
+    }
+
+    return rowData => <ListItem {...rowData} />;
+  }
+
   render() {
     const {
       dataSource,
@@ -106,22 +134,7 @@ class List extends React.Component {
             onRowMoved(e);
             this.forceUpdate();
           }}
-          renderRow={row => (
-            <ListItem
-              {...{
-                ...row,
-                rightContent: (
-                  <Icon
-                    name="md-reorder"
-                    size={24}
-                    type="regular"
-                  />
-                ),
-                leftSwipeButtons: [],
-                rightSwipeButtons: [],
-              }}
-            />
-          )}
+          renderRow={this.renderRow()}
         />
       );
     }
@@ -131,7 +144,7 @@ class List extends React.Component {
         <ListView
           keyboardShouldPersistTaps="handled"
           dataSource={this.state.dataSource}
-          renderRow={rowData => <ListItem {...rowData} />}
+          renderRow={this.renderRow()}
           refreshControl={this.getRefreshControl()}
           enableEmptySections
           onEndReached={onEndReached}
