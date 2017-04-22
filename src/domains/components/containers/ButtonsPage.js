@@ -8,6 +8,9 @@ import {
 } from '../../../../components';
 
 const styles = StyleSheet.create({
+  container: {
+    padding: 16,
+  },
   buttonGroup: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -36,7 +39,7 @@ class ButtonsPage extends React.Component {
     const inverseStyleName = inverse ? 'inverse-' : '';
 
     return (
-      <View>
+      <View style={styles.container}>
         <View style={styles.bigButton}>
           <Button
             styleName={`flat primary ${inverseStyleName}`}

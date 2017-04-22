@@ -7,6 +7,7 @@ import Constants from './components/lib/constants';
 import Icon from './components/Icon';
 import { focusTextInput } from './components/utils';
 import Gap from './components/Gap';
+import GradientView from './components/GradientView';
 import LineChart from './components/LineChart';
 import List from './components/List';
 import ListItem from './components/ListItem';
@@ -36,6 +37,7 @@ module.exports = {
   focusTextInput,
   getTheme,
   Gap,
+  GradientView,
   Icon,
   LineChart,
   List,

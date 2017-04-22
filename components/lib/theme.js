@@ -4,6 +4,7 @@ import barChartStyle from '../BarChart.style';
 import buttonStyle from '../Button.style';
 import checkboxStyle from '../Checkbox.style';
 import iconStyle from '../Icon.style';
+import gradientViewStyle from '../GradientView.style';
 import lineChartStyle from '../LineChart.style';
 import listStyle from '../List.style';
 import listItemStyle from '../ListItem.style';
@@ -471,6 +472,7 @@ export const getTheme = (options = theme) => ({
   [Constants.components.BarChart]: getStyle(barChartStyle, options),
   [Constants.components.Button]: getStyle(buttonStyle, options),
   [Constants.components.Checkbox]: getStyle(checkboxStyle, options),
+  [Constants.components.GradientView]: getStyle(gradientViewStyle, options),
   [Constants.components.Icon]: getStyle(iconStyle, options),
   [Constants.components.LineChart]: getStyle(lineChartStyle, options),
   [Constants.components.List]: getStyle(listStyle, options),

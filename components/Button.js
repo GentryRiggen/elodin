@@ -57,6 +57,7 @@ class Button extends Component {
         underlayColor={style.underlayColor}
         ref={component => this.component = component}
         style={finalStyle}
+        disabled={disabled}
       >
         <View>
           {content}

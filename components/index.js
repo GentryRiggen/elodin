@@ -5,6 +5,7 @@ import Button from './Button';
 import Checkbox from './Checkbox';
 import Constants from './lib/constants';
 import Gap from './Gap';
+import GradientView from './GradientView';
 import Icon from './Icon';
 import LineChart from './LineChart';
 import List from './List';
@@ -37,6 +38,7 @@ export {
   focusTextInput,
   getTheme,
   Gap,
+  GradientView,
   Icon,
   LineChart,
   List,

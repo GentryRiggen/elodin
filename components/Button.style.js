@@ -2,33 +2,52 @@ import Constants, { domain } from './lib/constants';
 
 const getStyle = (colors, font) => ({
   '.flat': {
-    underlayColor: 'transparent',
     '.accent': {
       underlayColor: colors.accentColor,
-      [`${domain}.Text`]: {
-        color: colors.accentColor,
+      [Constants.components.View]: {
+        borderColor: colors.accentColor,
+        borderWidth: 1,
+        [`${domain}.Text`]: {
+          color: colors.accentColor,
+        },
       },
     },
     '.secondary': {
       underlayColor: colors.secondaryDarkTextColor,
-      [`${domain}.Text`]: {
-        color: colors.secondaryDarkTextColor,
+      [Constants.components.View]: {
+        borderColor: colors.secondaryDarkTextColor,
+        borderWidth: 1,
+        [`${domain}.Text`]: {
+          color: colors.secondaryDarkTextColor,
+        },
       },
     },
     '.inverse-secondary': {
       underlayColor: colors.secondaryLightTextColor,
-      [`${domain}.Text`]: {
-        color: colors.secondaryLightTextColor,
+      [Constants.components.View]: {
+        borderColor: colors.secondaryLightTextColor,
+        borderWidth: 1,
+        [`${domain}.Text`]: {
+          color: colors.secondaryLightTextColor,
+        },
       },
     },
     '.disabled': {
-      [`${domain}.Text`]: {
-        color: colors.disabledDarkTextColor,
+      [Constants.components.View]: {
+        borderColor: colors.disabledDarkTextColor,
+        borderWidth: 1,
+        [`${domain}.Text`]: {
+          color: colors.disabledDarkTextColor,
+        },
       },
     },
     '.inverse-disabled': {
-      [`${domain}.Text`]: {
-        color: colors.disabledLightTextColor,
+      [Constants.components.View]: {
+        borderColor: colors.disabledLightTextColor,
+        borderWidth: 1,
+        [`${domain}.Text`]: {
+          color: colors.disabledLightTextColor,
+        },
       },
     },
   },
@@ -37,6 +56,7 @@ const getStyle = (colors, font) => ({
     underlayColor: colors.white.full,
     [Constants.components.View]: {
       backgroundColor: colors.primaryColor,
+      borderWidth: 0,
       [`${domain}.Text`]: {
         color: colors.white.full,
       },
@@ -44,6 +64,7 @@ const getStyle = (colors, font) => ({
     '.accent': {
       underlayColor: colors.white.full,
       [Constants.components.View]: {
+        borderWidth: 0,
         backgroundColor: colors.accentColor,
         [`${domain}.Text`]: {
           color: colors.white.full,
@@ -53,6 +74,7 @@ const getStyle = (colors, font) => ({
     '.secondary': {
       underlayColor: colors.white.full,
       [Constants.components.View]: {
+        borderWidth: 0,
         backgroundColor: colors.grey[200],
         [`${domain}.Text`]: {
           color: colors.secondaryDarkTextColor,
@@ -62,6 +84,7 @@ const getStyle = (colors, font) => ({
     '.disabled': {
       underlayColor: colors.white.full,
       [Constants.components.View]: {
+        borderWidth: 0,
         backgroundColor: colors.grey[500],
         [`${domain}.Text`]: {
           color: colors.disabledLightTextColor,
@@ -100,6 +123,8 @@ const getStyle = (colors, font) => ({
     alignItems: 'center',
     justifyContent: 'center',
     overflow: 'hidden',
+    borderColor: colors.primaryColor,
+    borderWidth: 1,
     [`${domain}.Text`]: {
       fontFamily: font.fontFamilyBold,
       fontWeight: font.fontWeightBold,

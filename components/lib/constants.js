@@ -7,6 +7,7 @@ export default {
     BarChart: `${domain}.BarChart`,
     Button: `${domain}.Button`,
     Checkbox: `${domain}.Checkbox`,
+    GradientView: `${domain}.GradientView`,
     Icon: `${domain}.Icon`,
     LineChart: `${domain}.LineChart`,
     List: `${domain}.List`,
