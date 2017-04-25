@@ -112,8 +112,6 @@ const getStyle = (colors, font) => ({
     },
   },
 
-  '..'
-
   underlayColor: colors.primaryColor,
   [Constants.components.View]: {
     height: 36,

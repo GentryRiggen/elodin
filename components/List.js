@@ -25,6 +25,7 @@ class List extends React.Component {
     onRowMoved: React.PropTypes.func,
     onRefreshRequested: React.PropTypes.func,
     renderRow: React.PropTypes.func,
+    removeClippedSubviews: React.PropTypes.bool,
     sortOrder: React.PropTypes.array,
     style: React.PropTypes.any.isRequired,
   };
@@ -39,6 +40,7 @@ class List extends React.Component {
     onRefreshRequested: noOp,
     onRowMoved: noOp,
     renderRow: noOp,
+    removeClippedSubviews: false,
     sortOrder: [],
   };
 
@@ -121,6 +123,7 @@ class List extends React.Component {
       onRowMoved,
       onEndReached,
       onEndReachedThreshold,
+      removeClippedSubviews,
       style,
     } = this.props;
 
@@ -149,6 +152,7 @@ class List extends React.Component {
           enableEmptySections
           onEndReached={onEndReached}
           onEndReachedThreshold={onEndReachedThreshold}
+          removeClippedSubviews={removeClippedSubviews}
         />
         {this.renderFetchingMore()}
       </View>
