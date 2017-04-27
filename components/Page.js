@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   StatusBar,
   View,
@@ -9,21 +10,24 @@ import Constants from './lib/constants';
 
 class Page extends React.Component {
   static propTypes = {
-    children: React.PropTypes.any.isRequired,
-    scrollable: React.PropTypes.bool,
-    style: React.PropTypes.any,
-    keyboardShouldPersistTaps: React.PropTypes.string,
+    children: PropTypes.any.isRequired,
+    scrollable: PropTypes.bool,
+    style: PropTypes.any,
+    keyboardShouldPersistTaps: PropTypes.string,
+    extraScrollHeight: PropTypes.number,
   };
 
   static defaultProps = {
     scrollable: false,
     keyboardShouldPersistTaps: 'never',
+    extraScrollHeight: 0,
   };
 
   renderContent() {
     const {
       children,
       keyboardShouldPersistTaps,
+      extraScrollHeight,
       scrollable,
       style,
     } = this.props;
@@ -33,6 +37,7 @@ class Page extends React.Component {
         <KeyboardAwareScrollView
           contentContainerStyle={style.scrollableContent}
           keyboardShouldPersistTaps={keyboardShouldPersistTaps}
+          extraScrollHeight={extraScrollHeight}
         >
           {children}
         </KeyboardAwareScrollView>
