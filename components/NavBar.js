@@ -76,7 +76,7 @@ class NavBar extends React.Component {
         <Button
           onPress={onPress}
           style={style.headerTouchableLeft}
-          styleName="narrow flex-start"
+          styleName="borderless narrow flex-start"
           noRipple
         >
           {content}
@@ -136,7 +136,7 @@ class NavBar extends React.Component {
           onPress={onPress}
           disabled={rightDisabled}
           style={style.headerTouchableRight}
-          styleName="narrow flex-end"
+          styleName="borderless narrow flex-end"
           noRipple
         >
           {content}

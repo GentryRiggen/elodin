@@ -93,6 +93,12 @@ const getStyle = (colors, font) => ({
     },
   },
 
+
+  '.borderless': {
+    [Constants.components.View]: {
+      borderWidth: 0,
+    },
+  },
   '.narrow': {
     [Constants.components.View]: {
       paddingLeft: 0,
