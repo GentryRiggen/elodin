@@ -1,7 +1,11 @@
 {
   "name": "elodin-components",
-  "version": "0.0.38",
+  "version": "0.0.39",
   "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gentryriggen/elodin-components"
+  },
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
