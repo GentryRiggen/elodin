@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Image, View, Switch } from 'react-native';
+import { Image, View } from 'react-native';
 import R from 'ramda';
 import {
   Page,
@@ -12,6 +12,10 @@ import {
   updateColor,
 } from '../../../ducks/componentsTheme';
 
+const viewStyle = {
+  paddingTop: 16,
+  paddingBottom: 16,
+};
 const numbers = [100, 200, 300, 400, 500, 600, 700, 800, 900];
 const alphas = ['A100', 'A200', 'A400', 'A700'];
 const colors = [
@@ -120,14 +124,10 @@ class ColorsPage extends React.Component {
   }
 
   render() {
-    const viewStyle = {
-      paddingTop: 16,
-      paddingBottom: 16,
-    };
     const { options } = this.props.componentsTheme;
 
     return (
-      <Page styleName="l-spacing">
+      <Page>
         <View style={viewStyle}>
           <Picker
             header="Primary Color"
