@@ -17,6 +17,7 @@ import Page from './Page';
 import Picker from './Picker';
 import PieChart from './PieChart';
 import RadioButton from './RadioButton';
+import SearchBar from './SearchBar';
 import Spinner from './Spinner';
 import StyleSheet from './lib/StyleSheet';
 import Tab from './Tab';
@@ -50,6 +51,7 @@ export {
   Picker,
   PieChart,
   RadioButton,
+  SearchBar,
   Spinner,
   StyleSheet,
   Tab,

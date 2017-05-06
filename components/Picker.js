@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import R from 'ramda';
 import { connectStyle } from '@shoutem/theme';
+import { TextInput } from 'react-native';
 import Fuse from 'fuse.js';
 
 import Constants from './lib/constants';
@@ -10,8 +11,8 @@ import List from './List';
 import ListItem from './ListItem';
 import Modal from './Modal';
 import Page from './Page';
+import SearchBar from './SearchBar';
 import Text from './Text';
-import TextInput from './TextInput';
 import View from './View';
 
 const noop = () => null;
@@ -151,19 +152,14 @@ class Picker extends Component {
     const {
       onSearch,
       showSearch,
-      style,
     } = this.props;
     const onChangeText = onSearch === noop ? this.onSearch() : onSearch;
     if (showSearch) {
       return (
-        <View style={style.searchBox}>
-          <TextInput
-            placeholder="Search"
-            value={this.state.search}
-            onChangeText={onChangeText}
-            autoCorrect={false}
-          />
-        </View>
+        <SearchBar
+          value={this.state.search}
+          onChangeText={onChangeText}
+        />
       );
     }
 

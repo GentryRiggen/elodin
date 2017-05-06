@@ -18,6 +18,7 @@ import Page from './components/Page';
 import Picker from './components/Picker';
 import PieChart from './components/PieChart';
 import RadioButton from './components/RadioButton';
+import SearchBar from './components/SearchBar';
 import Spinner from './components/Spinner';
 import StyleSheet from './components/lib/StyleSheet';
 import Tab from './components/Tab';
@@ -49,6 +50,7 @@ module.exports = {
   Picker,
   PieChart,
   RadioButton,
+  SearchBar,
   Spinner,
   StyleSheet,
   Tab,

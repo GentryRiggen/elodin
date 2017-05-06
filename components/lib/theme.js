@@ -14,6 +14,7 @@ import pageStyle from '../Page.style';
 import pickerStyle from '../Picker.style';
 import pieChartStyle from '../PieChart.style';
 import radioButtonStyle from '../RadioButton.style';
+import searchBarStyle from '../SearchBar.style';
 import spinnerStyle from '../Spinner.style';
 import tabStyle from '../Tab.style';
 import tabBarStyle from '../TabBar.style';
@@ -483,6 +484,7 @@ export const getTheme = (options = theme) => ({
   [Constants.components.Picker]: getStyle(pickerStyle, options),
   [Constants.components.PieChart]: getStyle(pieChartStyle, options),
   [Constants.components.RadioButton]: getStyle(radioButtonStyle, options),
+  [Constants.components.SearchBar]: getStyle(searchBarStyle, options),
   [Constants.components.Spinner]: getStyle(spinnerStyle, options),
   [Constants.components.Tab]: getStyle(tabStyle, options),
   [Constants.components.TabBar]: getStyle(tabBarStyle, options),

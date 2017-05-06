@@ -6,11 +6,6 @@ const getStyle = (colors, font, dimensions) => ({
   label: {
     marginLeft: dimensions.pickerLabelLeftMargin,
   },
-  searchBox: {
-    paddingVertical: 4,
-    paddingHorizontal: dimensions.pickerLabelLeftMargin,
-    backgroundColor: colors.grey[100],
-  },
 });
 
 export default getStyle;
