@@ -5,6 +5,7 @@ export default {
     AnimatedView: `${domain}.AnimatedView`,
     Avatar: `${domain}.Avatar`,
     BarChart: `${domain}.BarChart`,
+    BottomDrawer: `${domain}.BottomDrawer`,
     Button: `${domain}.Button`,
     Checkbox: `${domain}.Checkbox`,
     GradientView: `${domain}.GradientView`,

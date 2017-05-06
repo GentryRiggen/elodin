@@ -1,6 +1,7 @@
 import AnimatedView from './AnimatedView';
 import Avatar from './Avatar';
 import BarChart from './BarChart';
+import BottomDrawer from './BottomDrawer';
 import Button from './Button';
 import Checkbox from './Checkbox';
 import Constants from './lib/constants';
@@ -33,6 +34,7 @@ export {
   AnimatedView,
   Avatar,
   BarChart,
+  BottomDrawer,
   Button,
   Checkbox,
   Constants,

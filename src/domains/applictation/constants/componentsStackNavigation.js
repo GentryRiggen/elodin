@@ -1,6 +1,7 @@
 import ComponentsListPage from '../../components/containers/ComponentsListPage';
 import AvatarsPage from '../../components/containers/AvatarsPage';
 import BarChartsPage from '../../components/containers/BarChartsPage';
+import BottomDrawerPage from '../../components/containers/BottomDrawerPage';
 import ButtonsPage from '../../components/containers/ButtonsPage';
 import CheckBoxesPage from '../../components/containers/CheckBoxesPage';
 import LineChartsPage from '../../components/containers/LineChartsPage';
@@ -16,6 +17,7 @@ import TopTabsPage from '../../components/containers/TopTabsPage';
 export const ROUTE_COMPONENTS_HOME = 'ROUTE_COMPONENTS_HOME';
 export const ROUTE_AVATARS = 'ROUTE_AVATARS';
 export const ROUTE_BAR_CHART = 'ROUTE_BAR_CHART';
+export const ROUTE_BOTTOM_DRAWER = 'ROUTE_BOTTOM_DRAWER';
 export const ROUTE_BUTTON = 'ROUTE_BUTTON';
 export const ROUTE_CHECKBOXES = 'ROUTE_CHECKBOXES';
 export const ROUTE_LINE_CHART = 'ROUTE_LINE_CHART';
@@ -38,6 +40,9 @@ const componentsStackNavigation = {
   },
   [ROUTE_BAR_CHART]: {
     screen: BarChartsPage,
+  },
+  [ROUTE_BOTTOM_DRAWER]: {
+    screen: BottomDrawerPage,
   },
   [ROUTE_BUTTON]: {
     screen: ButtonsPage,

@@ -51,6 +51,12 @@ class ComponentsListPage extends React.Component {
         },
         {
           ...defaultProps,
+          headerText: 'Bottom Drawer',
+          secondaryText: 'Dope apple maps style bottom drawer',
+          onPress: this.goToRoute(routes.ROUTE_BOTTOM_DRAWER),
+        },
+        {
+          ...defaultProps,
           headerText: 'Buttons',
           secondaryText: 'Buttons... What more is there to say.',
           onPress: this.goToRoute(routes.ROUTE_BUTTON),
@@ -117,7 +123,7 @@ class ComponentsListPage extends React.Component {
         },
       ],
     });
-    // this.props.navigation.navigate(routes.ROUTE_PICKERS);
+    // this.props.navigation.navigate(routes.ROUTE_BOTTOM_DRAWER);
   }
 
 

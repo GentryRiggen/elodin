@@ -1,6 +1,7 @@
 import Constants from './constants';
 import avatarStyle from '../Avatar.style';
 import barChartStyle from '../BarChart.style';
+import bottomDrawerStyle from '../BottomDrawer.style';
 import buttonStyle from '../Button.style';
 import checkboxStyle from '../Checkbox.style';
 import iconStyle from '../Icon.style';
@@ -471,6 +472,7 @@ const getStyle = (styleFn, options) => styleFn(options.colors, options.font, opt
 export const getTheme = (options = theme) => ({
   [Constants.components.Avatar]: getStyle(avatarStyle, options),
   [Constants.components.BarChart]: getStyle(barChartStyle, options),
+  [Constants.components.BottomDrawer]: getStyle(bottomDrawerStyle, options),
   [Constants.components.Button]: getStyle(buttonStyle, options),
   [Constants.components.Checkbox]: getStyle(checkboxStyle, options),
   [Constants.components.GradientView]: getStyle(gradientViewStyle, options),

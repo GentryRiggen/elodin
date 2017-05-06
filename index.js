@@ -1,6 +1,7 @@
 import AnimatedView from './components/AnimatedView';
 import Avatar from './components/Avatar';
 import BarChart from './components/BarChart';
+import BottomDrawer from './components/BottomDrawer';
 import Button from './components/Button';
 import Checkbox from './components/Checkbox';
 import Constants from './components/lib/constants';
@@ -32,6 +33,7 @@ module.exports = {
   AnimatedView,
   Avatar,
   BarChart,
+  BottomDrawer,
   Button,
   Checkbox,
   Constants,
