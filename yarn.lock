@@ -4084,6 +4084,10 @@ react-native-image-progress@^0.6.0:
   version "0.6.0"
   resolved "https://registry.yarnpkg.com/react-native-image-progress/-/react-native-image-progress-0.6.0.tgz#14614add12beaa247a052e5a52e6a9fee0fb8c67"
 
+react-native-interactable@^0.0.8:
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/react-native-interactable/-/react-native-interactable-0.0.8.tgz#f4a175daccded50aa7edc67fb65f64e325eec70c"
+
 react-native-keyboard-aware-scroll-view@^0.2.8:
   version "0.2.8"
   resolved "https://registry.yarnpkg.com/react-native-keyboard-aware-scroll-view/-/react-native-keyboard-aware-scroll-view-0.2.8.tgz#e9843c0d7467a2e6a2a737883bd9c2b7c7e38e35"

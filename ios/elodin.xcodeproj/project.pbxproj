@@ -59,6 +59,7 @@
 		BAF82133D99A42B490E36872 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F774FDE8F47A4E88B0746FC2 /* Ionicons.ttf */; };
 		BDA42036EC244BB9AB06BD79 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED40EF4D70A94550B878FB2E /* Octicons.ttf */; };
 		DD8BCEBF9C1641E9AA552EA1 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 02C802231E2F4261B3B22906 /* SimpleLineIcons.ttf */; };
+		E7B5E4F2E13E4D0CA5C32751 /* libInteractable.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 47D27BD35921456ABA91CB3B /* libInteractable.a */; };
 		E9CABCB7B1764A3BB5313334 /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE17C652EF44CD0BD6557EF /* libRNVectorIcons.a */; };
 		F9D3266A1B324B2BA6F44577 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5DFA980DB71E48738C7F5CA7 /* FontAwesome.ttf */; };
 /* End PBXBuildFile section */
@@ -232,6 +233,13 @@
 			remoteGlobalIDString = 134814201AA4EA6300B7C361;
 			remoteInfo = BVLinearGradient;
 		};
+		4E6A3E021EBE6E07001D8A9E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A018844E449D4F1DAC2CE23C /* Interactable.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CC0127971E3ACC3900B23C9F;
+			remoteInfo = Interactable;
+		};
 		4EA48A9B1E7F168000B79E5C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8EEB5BFDC1054E4B9646FE4A /* RNVectorIcons.xcodeproj */;
@@ -302,6 +310,7 @@
 		22D8724493C44946BB5710E6 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* elodin-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "elodin-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* elodin-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "elodin-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		47D27BD35921456ABA91CB3B /* libInteractable.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libInteractable.a; sourceTree = "<group>"; };
 		49DC8F296D63436DBE127B46 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		4EA48A9D1E7F188C00B79E5C /* ART.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ART.xcodeproj; path = "../node_modules/react-native/Libraries/ART/ART.xcodeproj"; sourceTree = "<group>"; };
 		4EA48AA41E7F192E00B79E5C /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Black.ttf"; path = "../fonts/Lato-Black.ttf"; sourceTree = "<group>"; };
@@ -322,6 +331,7 @@
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		8EEB5BFDC1054E4B9646FE4A /* RNVectorIcons.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNVectorIcons.xcodeproj; path = "../node_modules/react-native-vector-icons/RNVectorIcons.xcodeproj"; sourceTree = "<group>"; };
+		A018844E449D4F1DAC2CE23C /* Interactable.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = Interactable.xcodeproj; path = "../node_modules/react-native-interactable/ios/Interactable.xcodeproj"; sourceTree = "<group>"; };
 		A5BDEADA046343589D9D627B /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
 		ADA6C95B98914775B0E75CF1 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
 		C90D6F88F8BD48C4A772C843 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
@@ -359,6 +369,7 @@
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				E9CABCB7B1764A3BB5313334 /* libRNVectorIcons.a in Frameworks */,
 				2EBA50B872894B5486FBE057 /* libBVLinearGradient.a in Frameworks */,
+				E7B5E4F2E13E4D0CA5C32751 /* libInteractable.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,6 +522,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		4E6A3DFD1EBE6E06001D8A9E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4E6A3E031EBE6E07001D8A9E /* libInteractable.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		4EA48A7F1E7F168000B79E5C /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -564,6 +583,7 @@
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
 				8EEB5BFDC1054E4B9646FE4A /* RNVectorIcons.xcodeproj */,
 				11E0134D3D6A4B5B8D7ED36C /* BVLinearGradient.xcodeproj */,
+				A018844E449D4F1DAC2CE23C /* Interactable.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -740,6 +760,10 @@
 				{
 					ProductGroup = 4E498BCC1EABD41500295F13 /* Products */;
 					ProjectRef = 11E0134D3D6A4B5B8D7ED36C /* BVLinearGradient.xcodeproj */;
+				},
+				{
+					ProductGroup = 4E6A3DFD1EBE6E06001D8A9E /* Products */;
+					ProjectRef = A018844E449D4F1DAC2CE23C /* Interactable.xcodeproj */;
 				},
 				{
 					ProductGroup = 00C302A81ABCB8CE00DB3ED1 /* Products */;
@@ -953,6 +977,13 @@
 			fileType = archive.ar;
 			path = libBVLinearGradient.a;
 			remoteRef = 4E498BD01EABD41500295F13 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4E6A3E031EBE6E07001D8A9E /* libInteractable.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libInteractable.a;
+			remoteRef = 4E6A3E021EBE6E07001D8A9E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		4EA48A9C1E7F168000B79E5C /* libRNVectorIcons.a */ = {
@@ -1172,12 +1203,14 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
+					"$(SRCROOT)/../node_modules/react-native-interactable/ios/Interactable",
 				);
 				INFOPLIST_FILE = elodinTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
@@ -1200,12 +1233,14 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
+					"$(SRCROOT)/../node_modules/react-native-interactable/ios/Interactable",
 				);
 				INFOPLIST_FILE = elodinTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
@@ -1234,6 +1269,7 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
+					"$(SRCROOT)/../node_modules/react-native-interactable/ios/Interactable",
 				);
 				INFOPLIST_FILE = elodin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1262,6 +1298,7 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
+					"$(SRCROOT)/../node_modules/react-native-interactable/ios/Interactable",
 				);
 				INFOPLIST_FILE = elodin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1292,11 +1329,13 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
+					"$(SRCROOT)/../node_modules/react-native-interactable/ios/Interactable",
 				);
 				INFOPLIST_FILE = "elodin-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
@@ -1328,11 +1367,13 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
+					"$(SRCROOT)/../node_modules/react-native-interactable/ios/Interactable",
 				);
 				INFOPLIST_FILE = "elodin-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
@@ -1365,6 +1406,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.elodin-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1389,6 +1431,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);

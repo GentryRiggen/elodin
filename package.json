@@ -29,6 +29,7 @@
     "react-native": "0.43.2",
     "react-native-actionsheet": "^2.1.0",
     "react-native-image-progress": "^0.6.0",
+    "react-native-interactable": "^0.0.8",
     "react-native-keyboard-aware-scroll-view": "^0.2.8",
     "react-native-linear-gradient": "^2.0.0",
     "react-native-menu": "^0.20.2",
