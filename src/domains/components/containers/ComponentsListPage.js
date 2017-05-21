@@ -123,7 +123,7 @@ class ComponentsListPage extends React.Component {
         },
       ],
     });
-    // this.props.navigation.navigate(routes.ROUTE_BOTTOM_DRAWER);
+    this.props.navigation.navigate(routes.ROUTE_TOP_TABS);
   }
 
 

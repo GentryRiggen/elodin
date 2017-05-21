@@ -57,6 +57,7 @@ class TopTabsPage extends React.Component {
     return (
       <TopTabs
         scrollable={scrollable}
+        noSwipe
       >
         {pages}
       </TopTabs>

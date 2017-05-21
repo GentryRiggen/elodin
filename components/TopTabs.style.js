@@ -10,6 +10,7 @@ const getStyle = (colors, font) => ({
     fontFamily: font.fontFamilyRegular,
     fontSize: font.fontSizeBody,
     color: colors.primaryColor,
+    marginBottom: -8,
   },
   fixedTab: {
     flex: 1,

@@ -12,11 +12,13 @@ class TopTabs extends React.Component {
     initialPage: React.PropTypes.number,
     scrollable: React.PropTypes.bool,
     style: React.PropTypes.any,
+    noSwipe: React.PropTypes.bool,
   };
 
   static defaultProps = {
     initialPage: 0,
     scrollable: false,
+    noSwipe: false,
   };
 
   renderTabBar() {
@@ -34,6 +36,7 @@ class TopTabs extends React.Component {
       children,
       initialPage,
       style,
+      noSwipe,
     } = this.props;
     return (
       <ScrollableTabView
@@ -42,6 +45,7 @@ class TopTabs extends React.Component {
         tabBarUnderlineStyle={style.tabBarUnderline}
         tabBarTextStyle={style.tabBarTextStyle}
         style={style.tabBar}
+        locked={noSwipe}
       >
         {children}
       </ScrollableTabView>
