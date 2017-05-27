@@ -1,16 +1,8 @@
 import React from 'react';
-import {
-  List,
-  RadioButton,
-  Text,
-} from '../../../../components';
+import { List, RadioButton } from '../../../../components';
 
 class RadioButtonsPage extends React.Component {
-  static navigationOptions = {
-    header: {
-      title: <Text styleName="title">Radio Buttons</Text>,
-    },
-  };
+  static navigationOptions = { headerTitle: 'Radio Buttons' };
 
   constructor(props) {
     super(props);

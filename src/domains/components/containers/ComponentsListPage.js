@@ -1,26 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Image, View } from 'react-native';
-import {
-  List,
-  Text,
-} from '../../../../components';
+import { Image } from 'react-native';
+import { List } from '../../../../components';
 import * as routes from '../../applictation/constants/componentsStackNavigation';
 
 class ComponentsListPage extends React.Component {
   static navigationOptions = {
-    header: {
-      title: <Text styleName="title">Components</Text>,
-    },
-    tabBar: {
-      label: 'Components',
-      icon: ({ tintColor }) => (
-        <Image
-          source={require('../../../images/cog.png')}
-          style={{ tintColor }}
-        />
-      ),
-    },
+    headerTitle: 'Components',
+    tabBarLabel: 'Components',
+    tabBarIcon: ({ tintColor }) => (
+      <Image
+        source={require('../../../images/cog.png')}
+        style={{ tintColor }}
+      />
+    ),
   }
 
   constructor(props) {
@@ -123,7 +116,7 @@ class ComponentsListPage extends React.Component {
         },
       ],
     });
-    this.props.navigation.navigate(routes.ROUTE_TOP_TABS);
+    // this.props.navigation.navigate(routes.ROUTE_TOP_TABS);
   }
 
 

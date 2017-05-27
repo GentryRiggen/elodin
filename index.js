@@ -28,6 +28,7 @@ import {
   TabBar,
   Text,
   TextInput,
+  TouchableOpacity,
   theme,
   TopTabs,
 } from './components';
@@ -62,6 +63,7 @@ module.exports = {
   TabBar,
   Text,
   TextInput,
+  TouchableOpacity,
   theme,
   TopTabs,
 };

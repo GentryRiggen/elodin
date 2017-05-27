@@ -13,11 +13,7 @@ const randomDate = (start, end) => {
 };
 
 class BarChartsPage extends React.Component {
-  static navigationOptions = {
-    header: {
-      title: <Text styleName="title">Bar Chart</Text>,
-    },
-  };
+  static navigationOptions = { headerTitle: 'Bar Chart' };
 
   constructor(props) {
     super(props);

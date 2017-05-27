@@ -1,11 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
-import {
-  Button,
-  Page,
-  Text,
-  StyleSheet,
-} from '../../../../components';
+import { Button, Page, StyleSheet } from '../../../../components';
 
 const styles = StyleSheet.create({
   container: {
@@ -28,11 +23,7 @@ const styles = StyleSheet.create({
 });
 
 class ButtonsPage extends React.Component {
-  static navigationOptions = {
-    header: {
-      title: <Text styleName="title">Buttons</Text>,
-    },
-  };
+  static navigationOptions = { headerTitle: 'Buttons' };
 
   getButtons(inverse = false) {
     const noOp = () => null;

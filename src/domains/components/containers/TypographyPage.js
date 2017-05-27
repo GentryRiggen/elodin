@@ -7,19 +7,14 @@ import {
 
 class TypographyPage extends React.Component {
   static navigationOptions = {
-    header: {
-      title: <Text styleName="title">Typography</Text>,
-    },
-    tabBar: {
-      label: 'Typography',
-      // Note: By default the icon is only shown on iOS. Search the showIcon option below.
-      icon: ({ tintColor }) => (
-        <Image
-          source={require('../../../images/typography.png')}
-          style={{ tintColor }}
-        />
-      ),
-    },
+    headerTitle: 'Typography',
+    tabBarLabel: 'Typography',
+    tabBarIcon: ({ tintColor }) => (
+      <Image
+        source={require('../../../images/typography.png')}
+        style={{ tintColor }}
+      />
+    ),
   }
 
   render() {

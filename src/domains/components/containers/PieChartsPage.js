@@ -3,8 +3,6 @@ import {
   Button,
   Page,
   PieChart,
-  View,
-  Text,
 } from '../../../../components';
 
 const randomDate = (start, end) => {
@@ -13,11 +11,7 @@ const randomDate = (start, end) => {
 };
 
 class PieChartsPage extends React.Component {
-  static navigationOptions = {
-    header: {
-      title: <Text styleName="title">Pie Charts</Text>,
-    },
-  };
+  static navigationOptions = { headerTitle: 'Pie Charts' };
 
   constructor(props) {
     super(props);

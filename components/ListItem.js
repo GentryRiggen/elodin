@@ -4,7 +4,7 @@ import Swipeout from 'react-native-swipeout';
 import { connectStyle } from '@shoutem/theme';
 import Constants from './lib/constants';
 import Text from './Text';
-import TouchableHighlight from './TouchableHighlight';
+import TouchableOpacity from './TouchableOpacity';
 import View from './View';
 
 class ListItem extends React.Component {
@@ -127,12 +127,10 @@ class ListItem extends React.Component {
       style,
     } = this.props;
     const content = (
-      <TouchableHighlight
+      <TouchableOpacity
         {...sortHandlers}
         style={style.listItem}
         onPress={onPress}
-        underlayColor={style.underlayColor}
-        delayLongPress={0}
       >
         <View style={style.container}>
           <View style={style.innerContainer}>
@@ -151,7 +149,7 @@ class ListItem extends React.Component {
           </View>
           {this.getDivider()}
         </View>
-      </TouchableHighlight>
+      </TouchableOpacity>
     );
 
     if (!R.isEmpty(leftSwipeButtons) || !R.isEmpty(rightSwipeButtons)) {

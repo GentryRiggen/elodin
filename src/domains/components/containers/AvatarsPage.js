@@ -24,11 +24,7 @@ const styles = StyleSheet.create({
 });
 
 class AvatarsPage extends React.Component {
-  static navigationOptions = {
-    header: {
-      title: <Text styleName="title">Avatars</Text>,
-    },
-  };
+  static navigationOptions = { headerTitle: 'Avatars' };
 
   render() {
     return (

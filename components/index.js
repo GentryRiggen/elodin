@@ -25,6 +25,7 @@ import Tab from './Tab';
 import TabBar from './TabBar';
 import Text from './Text';
 import TextInput from './TextInput';
+import TouchableOpacity from './TouchableOpacity';
 import theme, { getTheme } from './lib/theme';
 import TopTabs from './TopTabs';
 import View from './View';
@@ -60,6 +61,7 @@ export {
   TabBar,
   Text,
   TextInput,
+  TouchableOpacity,
   theme,
   TopTabs,
   View,

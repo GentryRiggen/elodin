@@ -27,6 +27,7 @@ export default {
     TextInput: `${domain}.TextInput`,
     TopTabs: `${domain}.TopTabs`,
     TouchableHighlight: `${domain}.TouchableHighlight`,
+    TouchableOpacity: `${domain}.TouchableOpacity`,
     View: `${domain}.View`,
   },
 };

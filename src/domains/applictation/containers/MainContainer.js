@@ -27,15 +27,13 @@ class MainContainer extends React.Component {
       componentsStackNavigation,
       {
         navigationOptions: {
-          tabBar: {
-            label: 'Components',
-            icon: ({ tintColor }) => (
-              <Image
-                source={require('../../../images/cog.png')}
-                style={{ tintColor }}
-              />
-            ),
-          },
+          tabBarLabel: 'Components',
+          tabBarIcon: ({ tintColor }) => (
+            <Image
+              source={require('../../../images/cog.png')}
+              style={{ tintColor }}
+            />
+          ),
         },
       },
     );
@@ -58,10 +56,10 @@ class MainContainer extends React.Component {
         }),
       },
     }, {
-      tabBarOptions: {
-        activeTintColor: this.props.componentsTheme.options.colors.primaryColor,
-      },
-    });
+        tabBarOptions: {
+          activeTintColor: this.props.componentsTheme.options.colors.primaryColor,
+        },
+      });
 
     return (
       <StyleProvider style={this.props.componentsTheme.theme}>

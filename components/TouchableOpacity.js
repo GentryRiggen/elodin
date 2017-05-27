@@ -1,16 +1,16 @@
 import React from 'react';
-import { View as RNView } from 'react-native';
+import { TouchableOpacity as RNTO } from 'react-native';
 import { connectStyle } from '@shoutem/theme';
 import Constants from './lib/constants';
 
-class View extends React.Component {
+class TouchableOpacity extends React.Component {
   setNativeProps(nativeProps) {
     this.component.setNativeProps(nativeProps);
   }
 
   render() {
     return (
-      <RNView
+      <RNTO
         ref={component => this.component = component}
         {...this.props}
       />
@@ -18,8 +18,8 @@ class View extends React.Component {
   }
 }
 
-View.propTypes = {
-  ...RNView.propTypes,
+TouchableOpacity.propTypes = {
+  ...RNTO.propTypes,
 };
 
-export default connectStyle(Constants.components.View)(View);
+export default connectStyle(Constants.components.TouchableOpacity)(TouchableOpacity);

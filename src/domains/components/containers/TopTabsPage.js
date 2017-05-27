@@ -8,21 +8,13 @@ import {
 } from '../../../../components';
 
 class TopTabsPage extends React.Component {
-  static navigationOptions = {
-    header: {
-      title: <Text styleName="title">Top Tabs</Text>,
-    },
-  };
+  static navigationOptions = { headerTitle: 'Top Tabs' };
 
   constructor(props) {
     super(props);
     this.state = {
       scrollable: false,
     };
-  }
-
-  toggleScrollable() {
-    return () => this.setState({ scrollable: !this.state.scrollable });
   }
 
   getPage(id) {
@@ -50,6 +42,10 @@ class TopTabsPage extends React.Component {
     }
 
     return arr;
+  }
+
+  toggleScrollable() {
+    return () => this.setState({ scrollable: !this.state.scrollable });
   }
 
   renderTabs(scrollable, count) {

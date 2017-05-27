@@ -4,7 +4,6 @@ import {
   Page,
   StyleSheet,
   Spinner,
-  Text,
 } from '../../../../components';
 
 const styles = StyleSheet.create({
@@ -19,11 +18,7 @@ const styles = StyleSheet.create({
 });
 
 class SpinnersPage extends React.Component {
-  static navigationOptions = {
-    header: {
-      title: <Text styleName="title">Spinners</Text>,
-    },
-  };
+  static navigationOptions = { headerTitle: 'Spinners' };
 
   renderSpinners() {
     return (

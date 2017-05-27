@@ -26,11 +26,7 @@ const styles = StyleSheet.create({
 });
 
 class BottomDrawerPage extends React.Component {
-  static navigationOptions = {
-    header: {
-      title: <Text styleName="title">Bottom Drawer</Text>,
-    },
-  };
+  static navigationOptions = { headerTitle: 'Bottom Drawer' };
 
   render() {
     return (

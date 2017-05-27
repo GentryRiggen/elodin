@@ -4,15 +4,10 @@ import {
   Button,
   LineChart,
   Page,
-  Text,
 } from '../../../../components';
 
 class LineChartsPage extends React.Component {
-  static navigationOptions = {
-    header: {
-      title: <Text styleName="title">Line Chart</Text>,
-    },
-  };
+  static navigationOptions = { headerTitle: 'Line Chart' };
 
   constructor(props) {
     super(props);

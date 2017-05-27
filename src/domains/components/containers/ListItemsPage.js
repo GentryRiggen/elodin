@@ -4,15 +4,10 @@ import {
   List,
   ListSwipeButton,
   Page,
-  Text,
 } from '../../../../components';
 
 class ListItemsPage extends React.Component {
-  static navigationOptions = {
-    header: {
-      title: <Text styleName="title">List Items</Text>,
-    },
-  };
+  static navigationOptions = { headerTitle: 'List Items' };
 
   constructor(props) {
     super(props);

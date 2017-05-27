@@ -1,16 +1,8 @@
 import React from 'react';
-import {
-  Checkbox,
-  List,
-  Text,
-} from '../../../../components';
+import { Checkbox, List } from '../../../../components';
 
 class CheckBoxesPage extends React.Component {
-  static navigationOptions = {
-    header: {
-      title: <Text styleName="title">Checkboxes</Text>,
-    },
-  };
+  static navigationOptions = { headerTitle: 'Checkboxes' };
 
   constructor(props) {
     super(props);

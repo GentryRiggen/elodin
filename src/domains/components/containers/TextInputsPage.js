@@ -24,11 +24,7 @@ const styles = StyleSheet.create({
 
 
 class TextInputsPage extends React.Component {
-  static navigationOptions = {
-    header: {
-      title: <Text styleName="title">Text Inputs</Text>,
-    },
-  };
+  static navigationOptions = { headerTitle: 'Text Inputs' };
 
   constructor(props) {
     super(props);

@@ -16,11 +16,7 @@ const styles = StyleSheet.create({
 });
 
 class ModalsPage extends React.Component {
-  static navigationOptions = {
-    header: {
-      title: <Text styleName="title">Modals</Text>,
-    },
-  };
+  static navigationOptions = { headerTitle: 'Modals' };
 
   constructor(props) {
     super(props);

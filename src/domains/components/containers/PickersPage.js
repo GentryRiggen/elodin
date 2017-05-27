@@ -1,21 +1,15 @@
 import React from 'react';
-import { View } from 'react-native';
 import {
   Button,
   Gap,
   Page,
   Picker,
-  Text,
 } from '../../../../components';
 
 import { books } from '../../../lib/data';
 
 class PickersPage extends React.Component {
-  static navigationOptions = {
-    header: {
-      title: <Text styleName="title">Pickers</Text>,
-    },
-  };
+  static navigationOptions = { headerTitle: 'Pickers' };
 
   constructor(props) {
     super(props);
