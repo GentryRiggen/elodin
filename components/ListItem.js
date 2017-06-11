@@ -42,7 +42,7 @@ class ListItem extends React.Component {
     } = this.props;
     return (
       <Text
-        styleName="regular subheading"
+        styleName="regular subheading bold"
         numberOfLines={headerLines}
         ellipsizeMode="tail"
       >
