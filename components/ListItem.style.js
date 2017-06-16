@@ -6,7 +6,7 @@ const getStyle = (colors, font, dimensions) => ({
   underlayColor: colors.darkListItemBackgroundColor,
   container: {
     flex: 1,
-    backgroundColor: 'transparent',
+    backgroundColor: colors.pageBackgroundColor,
     paddingLeft: dimensions.listItemLeftMargin,
     minHeight: dimensions.listItemMinHeight,
   },
@@ -53,6 +53,45 @@ const getStyle = (colors, font, dimensions) => ({
     height: 1,
     backgroundColor: colors.dividerDarkColor,
   },
+  allActionsWrapper: {
+    position: 'absolute',
+    height: '100%',
+    right: 0,
+    left: 0,
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  leftActionsWrapper: {
+    flex: 1,
+    flexDirection: 'row',
+  },
+  rightActionsWrapper: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+  },
+  action: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  error: {
+    width: dimensions.listItemSwipeButtonWidth,
+    height: '100%',
+    backgroundColor: colors.errorColor,
+  },
+  standard: {
+    width: dimensions.listItemSwipeButtonWidth,
+    height: '100%',
+    backgroundColor: colors.grey[400],
+  },
+  success: {
+    width: dimensions.listItemSwipeButtonWidth,
+    height: '100%',
+    backgroundColor: colors.successColor,
+  },
+  listItemSwipeButtonWidth: dimensions.listItemSwipeButtonWidth,
 });
 
 export default getStyle;

@@ -27,6 +27,14 @@ class ComponentsListPage extends React.Component {
     const defaultProps = {
       headerLines: 1,
       secondaryLines: 2,
+      rightSwipeButtons: [
+        {
+          text: 'hello',
+          type: 'success',
+          icon: 'star',
+          onPress: () => alert('HELLO!'),
+        },
+      ],
     };
     this.setState({
       components: [
@@ -116,7 +124,7 @@ class ComponentsListPage extends React.Component {
         },
       ],
     });
-    // this.props.navigation.navigate(routes.ROUTE_TOP_TABS);
+    // this.props.navigation.navigate(routes.ROUTE_LIST_ITEM);
   }
 
 

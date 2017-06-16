@@ -1,26 +1,40 @@
-import React from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import R from 'ramda';
-import Swipeout from 'react-native-swipeout';
 import { connectStyle } from '@shoutem/theme';
+import { TouchableHighlight } from 'react-native';
+import Interactable from 'react-native-interactable';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+
 import Constants from './lib/constants';
 import Text from './Text';
 import TouchableOpacity from './TouchableOpacity';
 import View from './View';
 
-class ListItem extends React.Component {
+const tension = 500;
+const damping = 0.6;
+const bounce = 0.25;
+const actionPropType = PropTypes.arrayOf(PropTypes.shape({
+  type: PropTypes.oneOf(['standard', 'error', 'success']).isRequired,
+  icon: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+  onPress: PropTypes.func.isRequired,
+}));
+
+class ListItem extends Component {
   static propTypes = {
-    headerText: React.PropTypes.string.isRequired,
-    headerLines: React.PropTypes.number,
-    secondaryText: React.PropTypes.string,
-    secondaryLines: React.PropTypes.number,
-    onPress: React.PropTypes.func,
-    divider: React.PropTypes.bool,
-    leftContent: React.PropTypes.node,
-    leftSwipeButtons: React.PropTypes.array,
-    rightSwipeButtons: React.PropTypes.array,
-    rightContent: React.PropTypes.node,
-    sortHandlers: React.PropTypes.any,
-    style: React.PropTypes.any.isRequired,
+    headerText: PropTypes.string.isRequired,
+    headerLines: PropTypes.number,
+    secondaryText: PropTypes.string,
+    secondaryLines: PropTypes.number,
+    onPress: PropTypes.func,
+    divider: PropTypes.bool,
+    leftContent: PropTypes.node,
+    leftSwipeButtons: actionPropType,
+    rightSwipeButtons: actionPropType,
+    rightContent: PropTypes.node,
+    sortHandlers: PropTypes.any,
+    style: PropTypes.any.isRequired,
   };
 
   static defaultProps = {
@@ -33,6 +47,7 @@ class ListItem extends React.Component {
     leftSwipeButtons: [],
     rightSwipeButtons: [],
     rightContent: null,
+    sortHandlers: null,
   };
 
   getHeaderText() {
@@ -86,6 +101,67 @@ class ListItem extends React.Component {
     return null;
   }
 
+  getSnapPoint(count, negate = false) {
+    const width = R.path(['style', 'listItemSwipeButtonWidth'])(this.props);
+    const snapPoint = width * count;
+    const x = negate ? -snapPoint : snapPoint;
+
+    return {
+      x,
+      damping,
+      tension,
+    };
+  }
+
+  getBoundary(count, negate = false) {
+    if (count) {
+      const width = R.path(['style', 'listItemSwipeButtonWidth'])(this.props);
+      const boundary = (count * width) + 15;
+      return negate ? -boundary : boundary;
+    }
+
+    return 0;
+  }
+
+  getSwipeProps() {
+    const { leftSwipeButtons, rightSwipeButtons } = this.props;
+    const leftItemCount = leftSwipeButtons.length;
+    const rightItemCount = rightSwipeButtons.length;
+    const snapPoints = [{
+      x: 0,
+      damping,
+      tension,
+    }];
+
+    if (rightItemCount) {
+      snapPoints.push(this.getSnapPoint(rightItemCount, true));
+    }
+
+    if (leftItemCount) {
+      snapPoints.push(this.getSnapPoint(leftItemCount));
+    }
+
+    const boundaries = {
+      right: this.getBoundary(leftItemCount),
+      left: this.getBoundary(rightItemCount, true),
+      bounce,
+    };
+
+    return {
+      snapPoints,
+      boundaries,
+    };
+  }
+
+  setRowRef = (e) => { this.row = e; }
+
+  actionPressed(action) {
+    return () => {
+      this.row.snapTo({ index: 0 });
+      action.onPress();
+    };
+  }
+
   renderLeft() {
     const {
       leftContent,
@@ -118,6 +194,32 @@ class ListItem extends React.Component {
     return null;
   }
 
+  renderAction = (action, index, left = true) => {
+    const { style } = this.props;
+    return (
+      <View key={index} style={R.propOr(style.standard, action.type)(style)}>
+        <TouchableOpacity style={style.action} onPress={this.actionPressed(action)}>
+          <Icon name={action.icon} color="#fff" size={20} />
+          <Text styleName="regular body inverse">{action.text}</Text>
+        </TouchableOpacity>
+      </View>
+    );
+  }
+
+  renderActions() {
+    const { style, leftSwipeButtons, rightSwipeButtons } = this.props;
+    return (
+      <View style={style.allActionsWrapper}>
+        <View style={style.leftActionsWrapper}>
+          {leftSwipeButtons.map((action, index) => this.renderAction(action, index))}
+        </View>
+        <View style={style.rightActionsWrapper}>
+          {rightSwipeButtons.map((action, index) => this.renderAction(action, index, false))}
+        </View>
+      </View>
+    );
+  }
+
   render() {
     const {
       onPress,
@@ -127,7 +229,7 @@ class ListItem extends React.Component {
       style,
     } = this.props;
     const content = (
-      <TouchableOpacity
+      <TouchableHighlight
         {...sortHandlers}
         style={style.listItem}
         onPress={onPress}
@@ -149,17 +251,24 @@ class ListItem extends React.Component {
           </View>
           {this.getDivider()}
         </View>
-      </TouchableOpacity>
+      </TouchableHighlight>
     );
 
     if (!R.isEmpty(leftSwipeButtons) || !R.isEmpty(rightSwipeButtons)) {
+      const { snapPoints, boundaries } = this.getSwipeProps();
       return (
-        <Swipeout
-          left={leftSwipeButtons}
-          right={rightSwipeButtons}
-        >
-          {content}
-        </Swipeout>
+        <View style={style.listItem}>
+          {this.renderActions()}
+          <Interactable.View
+            ref={this.setRowRef}
+            horizontalOnly
+            snapPoints={snapPoints}
+            boundaries={boundaries}
+            dragToss={0.01}
+          >
+            {content}
+          </Interactable.View>
+        </View>
       );
     }
 

@@ -35,13 +35,8 @@ class ListItemsPage extends React.Component {
   addItems(reset) {
     return () => {
       const lotsOText = 'Bro! What\'s up?!? Long time no see. How\'s life? Still lifting and getting dem gainz? Yeah me to. Gainz for life. [FIST BUMP]';
-      let a = [];
+      const a = [];
       const amount = Math.floor(Math.random() * 10) + 10;
-      const swipeButtons = [
-        { component: <ListSwipeButton text="Primary" styleName="primary" onPress={() => null} /> },
-        { component: <ListSwipeButton text="Accent" styleName="accent" onPress={() => null} /> },
-        { component: <ListSwipeButton text="Success" styleName="success" onPress={() => null} /> },
-      ];
       for (let i = 0; i < amount; ++i) a[i] = i;
       const items = a.map((i, index) => {
         const headerText = `List Item ${index}`;
@@ -56,11 +51,16 @@ class ListItemsPage extends React.Component {
             <Avatar
               kind="person"
               name={headerText}
-              image="https://unsplash.it/1920/1080/?random"
+              image="https://unsplash.it/150/150/?random"
             />
           ),
-          leftSwipeButtons: swipeButtons,
-          rightSwipeButtons: swipeButtons,
+          leftSwipeButtons: [
+            { type: 'success', icon: 'star', text: 'Success', onPress: () => null },
+          ],
+          rightSwipeButtons: [
+            { type: 'standard', icon: 'edit', text: 'Edit', onPress: () => null },
+            { type: 'error', icon: 'delete', text: 'Delete', onPress: () => null },
+          ],
         };
       });
 

@@ -338,7 +338,7 @@ const colors = {
     400: '#78909C',
     500: '#607D8B',
     600: '#546E7A',
-      700: '#455A64',
+    700: '#455A64',
     800: '#37474F',
     900: '#263238',
   },
@@ -432,6 +432,7 @@ const dimensions = {
 
   listItemMinHeight: 48,
   listItemLeftMargin: 16,
+  listItemSwipeButtonWidth: 80,
 
   pickerLabelLeftMargin: 20,
 
