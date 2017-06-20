@@ -31,6 +31,7 @@ import {
   TouchableOpacity,
   theme,
   TopTabs,
+  View,
 } from './components';
 
 module.exports = {
@@ -66,4 +67,5 @@ module.exports = {
   TouchableOpacity,
   theme,
   TopTabs,
+  View,
 };

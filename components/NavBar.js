@@ -165,7 +165,7 @@ class NavBar extends React.Component {
 
           <View style={style.headerTitle}>
             <Text
-              styleName="regular title center"
+              styleName="bold title center"
               style={style.headerTitleText}
               numberOfLines={1}
               ellipsizeMode="tail"
