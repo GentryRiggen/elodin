@@ -12,6 +12,11 @@ const getStyle = (colors, font, dimensions) => ({
     },
     zIndex: 3,
   },
+  '.transparent': {
+    header: {
+      backgroundColor: 'transparent',
+    },
+  },
   headerContent: {
     flex: 1,
     flexDirection: 'row',
